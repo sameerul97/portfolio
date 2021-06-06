@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react'
-import Store from './Store'
-import { ProjectCard } from './ProjectCard'
+import Store from '../Store'
+import { ProjectCard } from '../ProjectCard'
 
 const ButtonTags = [
   { id: 1, tagName: 'react' },

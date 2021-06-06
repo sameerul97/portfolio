@@ -4,7 +4,7 @@ const Store = {
       id: 1,
       name: 'Asana automation (AWS)',
       filterName: 'node',
-      image: './img/node-serverless.png',
+      image: './node-serverless.png',
       projectTags: [
         {
           id: 1,
@@ -24,7 +24,7 @@ const Store = {
       id: 2,
       name: 'Guess the drawing',
       filterName: 'node',
-      image: './img/socket-node-redis-docker.jpeg',
+      image: './socket-node-redis-docker.jpeg',
       projectTags: [
         {
           id: 1,
@@ -57,7 +57,7 @@ const Store = {
       id: 3,
       name: 'Talent Platform',
       filterName: 'database',
-      image: './img/talent_platform.png',
+      image: './talent_platform.png',
       projectTags: [
         {
           id: 1,
@@ -91,7 +91,7 @@ const Store = {
       id: 4,
       name: 'Apple IPhone scrolling',
       filterName: 'experiments',
-      image: './img/scrolling-iphone.png',
+      image: './scrolling-iphone.png',
       projectTags: [
         {
           id: 1,
@@ -108,7 +108,7 @@ const Store = {
       id: 5,
       name: 'Pandora Experiment',
       filterName: 'experiments',
-      image: './img/pandora-reflection.png',
+      image: './pandora-reflection.png',
       projectTags: [
         {
           id: 1,
@@ -129,7 +129,7 @@ const Store = {
       id: 6,
       name: 'Wheres Your Head At',
       filterName: 'vanilla',
-      image: './img/wyha.png',
+      image: './wyha.png',
       projectTags: [
         {
           id: 1,
@@ -159,7 +159,7 @@ const Store = {
       id: 7,
       name: 'Portfolio',
       filterName: 'react',
-      image: './img/portfolio.png',
+      image: './sameer-portfolio.JPG',
       projectTags: [
         {
           id: 1,
@@ -171,7 +171,7 @@ const Store = {
       id: 8,
       name: 'Image Annotator',
       filterName: 'react',
-      image: './img/img-annotator.png',
+      image: './img-annotator.png',
       projectTags: [
         {
           id: 1,
@@ -204,7 +204,7 @@ const Store = {
       id: 9,
       name: 'Adventure Creative Pages',
       filterName: 'vanilla',
-      image: './img/creative-page.png',
+      image: './creative-page.png',
       projectTags: [
         {
           id: 1,

@@ -3,7 +3,9 @@ import Reducer from './Reducer'
 
 const initialState = {
   posts: [],
+  allposts: [],
   error: null,
+  button: [],
 }
 
 const AboutStore = ({ children }) => {

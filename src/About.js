@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Sameer from './profile.png'
-import { Projects } from './Projects'
+import { Projects } from './sections/Projects'
 import { Context } from './AboutStore'
 import axios from 'axios'
+import { Tabs } from './components/Tabs'
+import { Tab } from './components/Tab'
 
 export function About(props) {
   return (
@@ -13,17 +15,17 @@ export function About(props) {
           <div className="container my-auto py-4">
             <div className="row">
               <div className="col-md-6 text-center">
-                <img src={Sameer} alt="" className="img-fluid  rounded" />
+                <img src="./profile.png" alt="" className="img-fluid  rounded" />
               </div>
               <div className="col-md-6 my-auto">
                 <div className="text-left">
                   <h1>About Me</h1>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi quam qui illum, odit magni laborum
-                    ipsa tenetur iste quo dolorem?
+                    Creative web developer with a flair for bringing innovative UX design to life. 2+ years of
+                    experience with various web technologies.
                   </p>
                   <AboutTabs />
-                  {/* {AboutTabs()} */}
+
                   {/* <Projects /> */}
                 </div>
               </div>
@@ -37,11 +39,11 @@ export function About(props) {
 
 function AboutTabs(props) {
   const [state, dispatch] = useContext(Context)
-  const [filterName, setFilterName] = useState('react')
+  const [filterName, setFilterName] = useState('mainSkills')
 
   useEffect(() => {
     axios
-      .get('./posts.json')
+      .get('./about.json')
       .then((response) => {
         const postsData = response.data
         dispatch({ type: 'SET_POSTS', payload: postsData })
@@ -63,67 +65,46 @@ function AboutTabs(props) {
 
   if (!state.error && state.posts) {
     posts = state.posts.map((post) => {
-      return <Post key={post.id} title={post.title} />
+      return <Post key={post.id} post={post} />
     })
   }
 
   return (
     <React.Fragment>
-      {/* {state.error && (
+      {state.error && (
         <p>
           Something went wrong: <span>{state.error}</span>
         </p>
       )}
 
-      {!state.error &&
-        state.posts &&
-        state.posts.map((post) => {
-          //   return <Post key={post.id} title={post.title} />
-          return <h1 key={post.id}>{post.title}</h1>
-        })} */}
-      <button
-        className="btn btn-dark active"
-        onClick={() => {
-          dispatch({ type: 'react', payload: 'react' })
-        }}>
-        react
-      </button>
-      <button
-        className="btn btn-dark"
-        onClick={() => {
-          dispatch({ type: 'database', payload: 'database' })
-        }}>
-        database
-      </button>
-      {/* {posts} */}
+      <Tabs>
+        {state.allposts.map((button) => (
+          <Tab
+            key={button.id}
+            button={button}
+            filterName={filterName}
+            dispatch={dispatch}
+            setFilterName={setFilterName}
+          />
+        ))}
+      </Tabs>
+
+      {posts}
     </React.Fragment>
   )
-  //   return (
-  //     <ul className="nav nav-pills">
-  //       <li className="nav-item">
-  //         <a className="nav-link active" href="#">
-  //           Active
-  //         </a>
-  //       </li>
-  //       <li className="nav-item">
-  //         <a className="nav-link" href="#">
-  //           Link
-  //         </a>
-  //       </li>
-  //       <li className="nav-item">
-  //         <a className="nav-link" href="#">
-  //           Link
-  //         </a>
-  //       </li>
-  //       <li className="nav-item">
-  //         <a className="nav-link disabled" href="#">
-  //           Disabled
-  //         </a>
-  //       </li>
-  //     </ul>
-  //   )
 }
 
-function Post({ title }) {
-  return <h1>{title}</h1>
+function Post({ post }) {
+  return (
+    <div className="my-2 tabs-detail">
+      <h6>{post.name}</h6>
+      <p className="my-0 py-0 fw-light">{post.info}</p>
+    </div>
+  )
 }
+
+// const Tabs = ({ children }) => (
+//   <ul className="tabs" role="tablist">
+//     {children}
+//   </ul>
+// )

@@ -3,6 +3,7 @@ import React from 'react'
 import { Header } from './Header'
 import { About } from './About'
 import AboutStore from './AboutStore'
+import { Projects } from './sections/Projects'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <AboutStore>
         <About />
       </AboutStore>
+      <Projects />
     </React.Fragment>
   )
 }

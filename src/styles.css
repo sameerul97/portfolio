@@ -29,7 +29,8 @@ canvas {
 }
 
 #about {
-  height: 100vh;
+  /* height: 100vh; */
+  padding: 100px;
 }
 
 #about .wrapper {
@@ -45,4 +46,51 @@ h1 {
 p {
   font-weight: 300;
   font-size: 1em;
+}
+
+ul.tabs {
+  display: flex;
+  margin: 0px;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul.tabs li {
+  position: relative;
+  margin: 10px 20px;
+  display: inline-block;
+  padding-bottom: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+ul.tabs li:first-child {
+  margin: 10px 0px;
+  margin-right: 20px;
+}
+
+.active-dark ul.tabs li.tabs__tab--selected {
+  color: #5EFFFF;
+}
+
+ul.tabs li.tabs__tab--selected:before {
+  width: 100%;
+  background: #5EFFFF;
+}
+
+ul.tabs li:before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  background: rgba(0, 0, 0, .2);
+  -webkit-transition: all .7s cubic-bezier(.19, 1, .22, 1) 0s;
+  transition: all .7s cubic-bezier(.19, 1, .22, 1) 0s;
+  height: 2px;
+  bottom: 0;
+}
+
+.tabs-detail p {
+  color: #717173;
 }
