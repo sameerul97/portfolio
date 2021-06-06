@@ -95,7 +95,7 @@ function AboutTabs(props) {
         }}>
         database
       </button>
-      {posts}
+      {/* {posts} */}
     </React.Fragment>
   )
   //   return (
