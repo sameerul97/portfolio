@@ -6,8 +6,8 @@ import { Html, Octahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMa
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import sameer from './sameer_2.glb'
-import { Effects } from './Effects'
+import sameer from '../sameer_2.glb'
+import { Effects } from '../Effects'
 // import { Effects } from './_Effect'
 
 function Hero({ material }) {

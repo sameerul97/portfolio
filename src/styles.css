@@ -28,13 +28,15 @@ canvas {
   z-index: 1;
 }
 
-#about {
-  /* height: 100vh; */
-  padding: 100px;
+section.utils {
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px;
 }
 
-#about .wrapper {
-  background-color: #1f1f1f
+section .board {
+  background-color: #1f1f1f;
+  padding: 60px;
 }
 
 h1 {
@@ -93,4 +95,40 @@ ul.tabs li:before {
 
 .tabs-detail p {
   color: #717173;
+}
+
+@media only screen and (max-width: 1400px) {
+  section.utils {
+    padding: 50px;
+  }
+  section .board {
+    padding: 50px;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  section.utils {
+    padding: 50px;
+  }
+  section .board {
+    padding: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  section.utils {
+    padding: 25px;
+  }
+  section .board {
+    padding: 25px;
+  }
 }

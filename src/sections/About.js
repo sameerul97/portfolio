@@ -1,39 +1,37 @@
 import React, { useContext, useEffect, useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
-import Sameer from './profile.png'
-import { Projects } from './sections/Projects'
-import { Context } from './AboutStore'
 import axios from 'axios'
-import { Tabs } from './components/Tabs'
-import { Tab } from './components/Tab'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap-utilities.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Projects } from './Projects'
+import { Context } from '../AboutStore'
+
+import Tabs from '../components/Tabs'
+import Tab from '../components/Tab'
+import Section from '../components/Section'
 
 export function About(props) {
   return (
-    <section id="about">
-      <div className="d-flex w-100 h-100 ">
-        <div className="p-5 mx-auto my-auto rounded wrapper">
-          <div className="container my-auto py-4">
-            <div className="row">
-              <div className="col-md-6 text-center">
-                <img src="./profile.png" alt="" className="img-fluid  rounded" />
-              </div>
-              <div className="col-md-6 my-auto">
-                <div className="text-left">
-                  <h1>About Me</h1>
-                  <p>
-                    Creative web developer with a flair for bringing innovative UX design to life. 2+ years of
-                    experience with various web technologies.
-                  </p>
-                  <AboutTabs />
+    <Section id="about">
+      <div className="row">
+        <div className="col-md-6 text-center">
+          <ProfileImage />
+        </div>
+        <div className="col-md-6 my-auto pt-3 pt-sm-0">
+          <div className="text-left">
+            <h1>About Me</h1>
+            <p>
+              Creative web developer with a flair for bringing innovative UX design to life. 2+ years of experience with
+              various web technologies.
+            </p>
+            <AboutTabs />
 
-                  {/* <Projects /> */}
-                </div>
-              </div>
-            </div>
+            {/* <Projects /> */}
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 
@@ -103,8 +101,4 @@ function Post({ post }) {
   )
 }
 
-// const Tabs = ({ children }) => (
-//   <ul className="tabs" role="tablist">
-//     {children}
-//   </ul>
-// )
+const ProfileImage = ({ children }) => <img src="./profile.png" alt="" className="img-fluid  rounded" />

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header } from './Header'
-import { About } from './About'
+import { Header } from './sections/Header'
+import { About } from './sections/About'
 import AboutStore from './AboutStore'
 import { Projects } from './sections/Projects'
 

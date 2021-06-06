@@ -20,14 +20,15 @@ export function ProjectCard({ project }) {
 
 const ClickableProjectTag = ({ tag }) => (
   <a href={tag.link} target="_blank">
-    <span className="badge badge-pill badge-dark mx-1">{tag.name}</span>
+    <span className="badge rounded-pill bg-secondary me-1 fw-light">{tag.name}</span>
   </a>
 )
 
-const ProjectTag = ({ tag }) => <span className="badge badge-pill badge-secondary mx-1">{tag.name}</span>
+// const ProjectTag = ({ tag }) => <span className="badge badge-pill badge-primary mx-1">{tag.name}</span>
+const ProjectTag = ({ tag }) => <span className="badge rounded-pill bg-dark me-1 fw-light">{tag.name}</span>
 
 const ProjectImage = ({ image, imageCaption }) => <img src={image} className="card-img-top" alt={imageCaption} />
 
-const ProjectName = ({ name }) => <p className="card-text text-dark">{name}</p>
+const ProjectName = ({ name }) => <h6 className="card-text text-dark">{name}</h6>
 
 const ProjectBody = ({ children }) => <div className="card-body">{children}</div>

@@ -1,19 +1,27 @@
 import React, { useState, useReducer } from 'react'
 import Store from '../Store'
-import { ProjectCard } from '../ProjectCard'
+
+import Section from '../components/Section'
+import Tabs from '../components/Tabs'
+import Tab from '../components/Tab'
+
+import { ProjectCard } from '../components/ProjectCard'
 
 const ButtonTags = [
-  { id: 1, tagName: 'react' },
-  { id: 2, tagName: 'vanilla' },
-  { id: 3, tagName: 'experiments' },
-  { id: 4, tagName: 'database' },
-  { id: 5, tagName: 'node' },
+  { id: 6, filterName: 'all', name: 'all' },
+  { id: 1, filterName: 'react', name: 'react' },
+  { id: 2, filterName: 'vanilla', name: 'vanilla' },
+  { id: 3, filterName: 'experiments', name: 'experiments' },
+  { id: 4, filterName: 'database', name: 'database' },
+  { id: 5, filterName: 'node', name: 'node' },
 ]
 
-const defaultState = Store.data.filter((i) => i.filterName === 'react')
+const defaultState = Store.data
 
 function useProjectFilter(state, action) {
   switch (action.type) {
+    case 'all':
+      return Store.data
     case 'react':
       return Store.data.filter((i) => i.filterName === 'react')
     case 'vanilla':
@@ -31,11 +39,13 @@ function useProjectFilter(state, action) {
 
 export function Projects({ initialCount }) {
   const [state, dispatch] = useReducer(useProjectFilter, defaultState)
-  const [filterName, setFilterName] = useState('react')
+  const [filterName, setFilterName] = useState('all')
 
   return (
-    <React.Fragment>
-      {ButtonTags.map((button) => (
+    <Section id="about" classes="min-vh-100">
+      <h1>My Work</h1>
+
+      {/* {ButtonTags.map((button) => (
         <FilterButton
           key={button.id}
           filterName={filterName}
@@ -43,8 +53,18 @@ export function Projects({ initialCount }) {
           dispatch={dispatch}
           setFilterName={setFilterName}
         />
-      ))}
-
+      ))} */}
+      <Tabs>
+        {ButtonTags.map((button) => (
+          <Tab
+            key={button.id}
+            button={button}
+            filterName={filterName}
+            dispatch={dispatch}
+            setFilterName={setFilterName}
+          />
+        ))}
+      </Tabs>
       <div className="row">
         {state.map((project) => (
           <BootstrapMdColumn key={project.id}>
@@ -52,7 +72,7 @@ export function Projects({ initialCount }) {
           </BootstrapMdColumn>
         ))}
       </div>
-    </React.Fragment>
+    </Section>
   )
 }
 
