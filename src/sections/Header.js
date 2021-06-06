@@ -6,8 +6,7 @@ import { Html, Octahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMa
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import sameer from '../sameer_2.glb'
-import { Effects } from '../Effects'
+import { Effects } from '../components/Effects'
 // import { Effects } from './_Effect'
 
 function Hero({ material }) {
@@ -61,7 +60,7 @@ function Instances({ material }) {
 }
 
 const Sameer = () => {
-  const gltf = useLoader(GLTFLoader, sameer)
+  const gltf = useLoader(GLTFLoader, './sameer_2.glb')
   return <primitive object={gltf.scene} position={[0, -0.75, 0]} />
 }
 

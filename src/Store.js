@@ -165,6 +165,10 @@ const Store = {
           id: 1,
           name: 'React',
         },
+        {
+          id: 2,
+          name: 'React Three Fiber',
+        }
       ],
     },
     {

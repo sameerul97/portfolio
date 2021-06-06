@@ -1,15 +1,17 @@
 import React, { createContext, useReducer } from 'react'
-import Reducer from './Reducer'
+import AboutReducer from './AboutReducer'
 
 const initialState = {
-  posts: [],
-  allposts: [],
+  // aboutData holds original source
+  aboutData: [],
+  // selectedInfo holds array of object for selected filter
+  selectedInfo: [],
+  aboutButtonFilters: [],
   error: null,
-  button: [],
 }
 
 const AboutStore = ({ children }) => {
-  const [state, dispatch] = useReducer(Reducer, initialState)
+  const [state, dispatch] = useReducer(AboutReducer, initialState)
   return <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
 }
 

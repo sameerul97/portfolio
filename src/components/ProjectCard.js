@@ -1,31 +1,21 @@
 import React, { useState } from 'react'
+import { ClickableBadge, Badge } from './Badge'
 
 export function ProjectCard({ project }) {
-  const [text, setText] = useState('Card')
-
   return (
-    <div className="card border-light" style={{ width: '18rem' }}>
+    <div className="card border-light p-1">
       <ProjectImage image={project.image} imageCaption={project.name} />
 
       <ProjectBody>
         <ProjectName name={project.name} />
 
         {project.projectTags.map((tag) =>
-          tag.link ? <ClickableProjectTag key={tag.id} tag={tag} /> : <ProjectTag key={tag.id} tag={tag} />
+          tag.link ? <ClickableBadge Badge key={tag.id} tag={tag} /> : <Badge Badge key={tag.id} tag={tag} />
         )}
       </ProjectBody>
     </div>
   )
 }
-
-const ClickableProjectTag = ({ tag }) => (
-  <a href={tag.link} target="_blank">
-    <span className="badge rounded-pill bg-secondary me-1 fw-light">{tag.name}</span>
-  </a>
-)
-
-// const ProjectTag = ({ tag }) => <span className="badge badge-pill badge-primary mx-1">{tag.name}</span>
-const ProjectTag = ({ tag }) => <span className="badge rounded-pill bg-dark me-1 fw-light">{tag.name}</span>
 
 const ProjectImage = ({ image, imageCaption }) => <img src={image} className="card-img-top" alt={imageCaption} />
 

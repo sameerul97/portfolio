@@ -1,12 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap/dist/css/bootstrap-utilities.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { Projects } from './Projects'
-import { Context } from '../AboutStore'
-
+import { Context } from '../store/AboutStore'
 import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
 import Section from '../components/Section'
@@ -26,8 +22,6 @@ export function About(props) {
               various web technologies.
             </p>
             <AboutTabs />
-
-            {/* <Projects /> */}
           </div>
         </div>
       </div>
@@ -42,28 +36,27 @@ function AboutTabs(props) {
   useEffect(() => {
     axios
       .get('./about.json')
-      .then((response) => {
-        const postsData = response.data
-        dispatch({ type: 'SET_POSTS', payload: postsData })
+      .then(({ data }) => {
+        dispatch({ type: 'SET_ABOUT', payload: data })
       })
       .catch((error) => {
         dispatch({ type: 'SET_ERROR', payload: error })
       })
   }, [])
 
-  let posts = <p>Loading...</p>
+  let infos = <p>Loading...</p>
 
   if (state.error) {
-    posts = (
+    infos = (
       <p>
         Something went wrong: <span>{state.error}</span>
       </p>
     )
   }
 
-  if (!state.error && state.posts) {
-    posts = state.posts.map((post) => {
-      return <Post key={post.id} post={post} />
+  if (!state.error && state.selectedInfo) {
+    infos = state.selectedInfo.map((post) => {
+      return <Info key={post.id} post={post} />
     })
   }
 
@@ -76,7 +69,7 @@ function AboutTabs(props) {
       )}
 
       <Tabs>
-        {state.allposts.map((button) => (
+        {state.aboutButtonFilters.map((button) => (
           <Tab
             key={button.id}
             button={button}
@@ -87,12 +80,12 @@ function AboutTabs(props) {
         ))}
       </Tabs>
 
-      {posts}
+      {infos}
     </React.Fragment>
   )
 }
 
-function Post({ post }) {
+function Info({ post }) {
   return (
     <div className="my-2 tabs-detail">
       <h6>{post.name}</h6>
