@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "filterName": "mainSkills",
+    "name": "main skills",
+    "info": [
+      {
+        "id": 1,
+        "name": "Front-end",
+        "info": "JS JQuery AngularJs React Bootstrap ThreeJs"
+      },
+      {
+        "id": 2,
+        "name": "Backend-end",
+        "info": "PHP Nodejs Expressjs REST"
+      },
+      {
+        "id": 3,
+        "name": "Others",
+        "info": "AWS Docker"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "filterName": "experience",
+    "name": "experience",
+    "info": [
+      {
+        "id": 1,
+        "name": "Bauer - Web Developer",
+        "info": "2019 - present"
+      },
+      {
+        "id": 2,
+        "name": "Sahab Solicitors - Web Freelancer",
+        "info": "2017 - 2018"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "filterName": "education",
+    "name": "education",
+    "info": [
+      {
+        "id": 1,
+        "name": "MEng Computer Science",
+        "info": "2015 - 2019 Univeristy Of Hertfordshire"
+      }
+    ]
+  }
+]
