@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ClickableBadge, Badge } from './Badge'
 
 export function ProjectCard({ project }) {

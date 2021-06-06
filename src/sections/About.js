@@ -42,7 +42,7 @@ function AboutTabs(props) {
       .catch((error) => {
         dispatch({ type: 'SET_ERROR', payload: error })
       })
-  }, [])
+  }, [dispatch])
 
   let infos = <p>Loading...</p>
 

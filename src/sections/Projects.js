@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useReducer } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 
 import { Context } from '../store/WorkStore'
@@ -22,7 +22,7 @@ export function Projects({ initialCount }) {
       .catch((error) => {
         dispatch({ type: 'SET_ERROR', payload: error })
       })
-  }, [])
+  }, [dispatch])
 
   return (
     <Section id="about" classes="min-vh-100">
