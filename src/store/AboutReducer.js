@@ -32,11 +32,13 @@ const AboutReducer = (state, action) => {
       }
     }
 
-    case 'SET_ERROR':
+    case 'SET_ERROR': {
       return {
         ...state,
         error: action.payload,
       }
+    }
+    
     default:
       return state
   }
