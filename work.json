@@ -175,10 +175,15 @@
       "projectTags": [
         {
           "id": 1,
-          "name": "React"
+          "name": "Github",
+          "link": "https://github.com/sameerul97/portfolio"
         },
         {
           "id": 2,
+          "name": "React"
+        },
+        {
+          "id": 3,
           "name": "React Three Fiber"
         }
       ]
@@ -192,7 +197,7 @@
         {
           "id": 1,
           "name": "Live link",
-          "link": "https://creative.bauermedia.co.uk/scrollmagic/img-annotator-v4/#/"
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/img-annotator-v3/#/images"
         },
         {
           "id": 2,
