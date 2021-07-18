@@ -28,10 +28,14 @@ canvas {
   z-index: 1;
 }
 
+section:first-of-type {
+  padding-top: 60px;
+}
+
 section.utils {
   max-width: 1400px;
   margin: auto;
-  padding: 60px;
+  padding-bottom: 60px;
 }
 
 section .board {

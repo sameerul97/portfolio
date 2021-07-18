@@ -30,14 +30,14 @@
     },
     {
       "id": 2,
-      "name": "Guess the drawing",
+      "name": "Pictionary (Web based)",
       "filterName": "node",
       "image": "./socket-node-redis-docker.jpeg",
       "projectTags": [
         {
           "id": 1,
           "name": "Github",
-          "link": "https://github.com/sameerul97/guessthewordapp"
+          "link": "https://github.com/sameerul97/guessthewordapp/tree/dev"
         },
         {
           "id": 2,
@@ -196,22 +196,27 @@
         },
         {
           "id": 2,
-          "name": "PHP"
+          "name": "Github",
+          "link": "https://github.com/sameerul97/img-annotator"
         },
         {
           "id": 3,
-          "name": "REST"
+          "name": "PHP"
         },
         {
           "id": 4,
-          "name": "JWT"
+          "name": "REST"
         },
         {
           "id": 5,
-          "name": "MySQL"
+          "name": "JWT"
         },
         {
           "id": 6,
+          "name": "MySQL"
+        },
+        {
+          "id": 7,
           "name": "Docker"
         }
       ]
@@ -234,6 +239,45 @@
         {
           "id": 3,
           "name": "2020 Creative Pages"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Talent Platform",
+      "filterName": "vanilla",
+      "image": "./talent_platform.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Github",
+          "link": "https://github.com/sameerul97/Talent_Platform"
+        },
+        {
+          "id": 2,
+          "name": "ES6"
+        },
+        {
+          "id": 3,
+          "name": "Webpack"
+        },
+        {
+          "id": 4,
+          "name": "Design Prototype",
+          "link": "https://xd.adobe.com/view/323f507d-8dac-4e8d-a21a-79457a6a679f-676c/"
+        },
+        {
+          "id": 5,
+          "name": "Database",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/talent_platform_schema.png"
+        },
+        {
+          "id": 6,
+          "name": "PHP"
+        },
+        {
+          "id": 7,
+          "name": "REST"
         }
       ]
     }
