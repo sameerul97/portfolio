@@ -7,7 +7,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import { Effects } from '../components/Effects'
-// import { Effects } from './_Effect'
+// import { Effects } from './_Effect';
+
+import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
 
 function Hero({ material }) {
   const main = useRef()
@@ -67,19 +69,28 @@ const Sameer = () => {
 const CameraController = () => {
   const { camera, gl } = useThree()
   const [vec] = useState(() => new THREE.Vector3())
+  const isMobileScreen = useCheckMobileScreen()
 
   useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement)
-    controls.enableZoom = false
+    let controls
+
+    if (!isMobileScreen) {
+      controls = new OrbitControls(camera, gl.domElement)
+      controls.enableZoom = false
+    }
 
     return () => {
-      controls.dispose()
+      if (!isMobileScreen) {
+        controls.dispose()
+      }
     }
-  }, [camera, gl])
+  }, [camera, gl, isMobileScreen]);
 
   useFrame((state) => {
+    // if (!isMobileScreen) {
     state.camera.position.lerp(vec.set(-state.mouse.x * 6, 4 + state.mouse.y * 6, 14), 0.05)
     state.camera.lookAt(0, 0, 0)
+    // }
   })
   return null
 }
