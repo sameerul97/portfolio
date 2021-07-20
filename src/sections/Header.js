@@ -7,9 +7,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import { Effects } from '../components/Effects'
-// import { Effects } from './_Effect';
-
 import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
+// import { Effects } from './_Effect';
 
 function Hero({ material }) {
   const main = useRef()
@@ -19,6 +18,7 @@ function Hero({ material }) {
     main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.1)
     main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.1)
   })
+
   return <Octahedron args={[1, 5]} ref={main} material={material} position={[0, 0, -2]} detail={0} />
 }
 
@@ -63,6 +63,7 @@ function Instances({ material }) {
 
 const Sameer = () => {
   const gltf = useLoader(GLTFLoader, './sameer_2.glb')
+
   return <primitive object={gltf.scene} position={[0, -0.75, 0]} />
 }
 
@@ -84,7 +85,7 @@ const CameraController = () => {
         controls.dispose()
       }
     }
-  }, [camera, gl, isMobileScreen]);
+  }, [camera, gl, isMobileScreen])
 
   useFrame((state) => {
     // if (!isMobileScreen) {
@@ -92,6 +93,7 @@ const CameraController = () => {
     state.camera.lookAt(0, 0, 0)
     // }
   })
+
   return null
 }
 
