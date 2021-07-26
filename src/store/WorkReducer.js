@@ -29,7 +29,7 @@ function WorkReducer(state, action) {
         selectedInfo: state.workData.filter((i) => i.filterName === action.type),
       }
 
-    case 'experiments':
+    case 'webgl':
       return {
         ...state,
         selectedInfo: state.workData.filter((i) => i.filterName === action.type),
