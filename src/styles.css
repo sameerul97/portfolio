@@ -9,7 +9,6 @@ html, body, #root {
   padding: 0;
   background-color: #272727;
   color: #ffffff;
-  font-family: 'Josefin Sans', sans-serif;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -44,7 +43,6 @@ section .board {
 }
 
 h1 {
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
   font-size: 5em;
 }
@@ -99,6 +97,17 @@ ul.tabs li:before {
 
 .tabs-detail p {
   color: #717173;
+}
+
+.hoverable-badge {
+  font-size: .70em;
+  transition: all 0.2s ease-in-out;
+}
+
+.hoverable-badge:hover {
+  background-color: #5EFFFF !important;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1400px) {

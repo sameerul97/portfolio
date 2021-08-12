@@ -36,6 +36,16 @@ describe('Badge', () => {
     expect(spanTag.text()).toEqual(tag.name)
   })
 
+  it('should render badge with custom CSS class', () => {
+    const tag = {
+      name: 'Docker',
+    }
+    const classes = 'bg-white text-dark customClass'
+    const wrapper = shallow(<Badge tag={tag} classes={classes} />)
+
+    expect(wrapper.hasClass(classes)).toBe(true)
+  })
+
   it('should render text', () => {
     const text = 'hello world'
     const wrapper = shallow(<Text text={text} />)
