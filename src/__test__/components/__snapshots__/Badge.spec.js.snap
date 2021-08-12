@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render no text 1`] = `
+<p>
+  No text
+</p>
+`;
+
+exports[`Badge should render text 1`] = `
+<HeaderText
+  text="hello world"
+/>
+`;
+
+exports[`Paragraph should render no text 1`] = `
+<p>
+  No text
+</p>
+`;
+
+exports[`Paragraph should render text 1`] = `
+<HeaderText
+  text="hello world"
+/>
+`;

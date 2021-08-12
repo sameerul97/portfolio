@@ -6,6 +6,8 @@ const ClickableBadge = ({ tag }) => (
   </a>
 )
 
-const Badge = ({ tag }) => <span className="badge rounded-pill bg-dark me-1 fw-light">{tag.name}</span>
+const Badge = ({ tag, classes }) => (
+  <span className={`badge rounded-pill bg-dark me-1 fw-light ${classes}`}>{tag.name}</span>
+)
 
 export { ClickableBadge, Badge }

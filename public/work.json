@@ -3,7 +3,7 @@
     { "id": 6, "filterName": "all", "name": "all" },
     { "id": 1, "filterName": "react", "name": "react" },
     { "id": 2, "filterName": "vanilla", "name": "vanilla" },
-    { "id": 3, "filterName": "experiments", "name": "experiments" },
+    { "id": 3, "filterName": "webgl", "name": "webgl" },
     { "id": 4, "filterName": "database", "name": "database" },
     { "id": 5, "filterName": "node", "name": "node" }
   ],
@@ -103,7 +103,7 @@
     {
       "id": 4,
       "name": "Apple IPhone scrolling",
-      "filterName": "experiments",
+      "filterName": "webgl",
       "image": "./scrolling-iphone.png",
       "projectTags": [
         {
@@ -119,8 +119,8 @@
     },
     {
       "id": 5,
-      "name": "Pandora Experiment",
-      "filterName": "experiments",
+      "name": "Grazia & Pandora WEBGL",
+      "filterName": "webgl",
       "image": "./pandora-reflection.png",
       "projectTags": [
         {

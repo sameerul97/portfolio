@@ -6,15 +6,16 @@ import { Context } from '../store/AboutStore'
 import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
 import Section from '../components/Section'
+import { Badge } from '../components/Badge'
 
 export function About(props) {
   return (
     <Section id="about">
       <div className="row">
-        <div className="col-md-6 text-center">
+        <div className="col-lg-6 text-center">
           <ProfileImage />
         </div>
-        <div className="col-md-6 my-auto pt-3 pt-sm-0">
+        <div className="col-lg-6 pt-3 pt-lg-0">
           <div className="text-left">
             <h1>About Me</h1>
             <p>
@@ -87,9 +88,13 @@ function AboutTabs(props) {
 
 function Info({ post }) {
   return (
-    <div className="my-2 tabs-detail">
-      <h6>{post.name}</h6>
-      <p className="my-0 py-0 fw-light">{post.info}</p>
+    <div className="my-2 mb-3 tabs-detail">
+      <h6 className="mb-1">{post.name}</h6>
+      {post.info && <p className="my-0 py-0 fw-light">{post.info}</p>}
+
+      {post.tags?.map((button, i) => (
+        <Badge key={i} tag={button} classes={'bg-white text-dark fw-normal text-uppercase hoverable-badge'} />
+      ))}
     </div>
   )
 }
