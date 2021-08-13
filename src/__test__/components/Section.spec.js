@@ -6,8 +6,6 @@ import { screen } from '@testing-library/react'
 
 /* Components */
 import Section, { Board } from '../../components/Section'
-import Text, { HeaderText } from '../../components/Text'
-import { ClickableBadge, Badge } from '../../components/Badge'
 
 Enzyme.configure({ adapter: new Adapter() })
 

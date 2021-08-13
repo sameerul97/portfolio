@@ -3,7 +3,7 @@ import React from 'react'
 export default function Tab({ button, filterName, dispatch, setFilterName }) {
   return (
     <li
-      className={`text-capitalize tabs__tab  ${filterName === button.filterName ? 'tabs__tab--selected' : ''}  `}
+      className={`text-capitalize tabs__tab ${filterName === button.filterName ? 'tabs__tab--selected' : ''}  `}
       onClick={() => {
         dispatch({ type: button.filterName })
         setFilterName(button.filterName)
