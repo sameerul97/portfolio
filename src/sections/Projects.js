@@ -25,7 +25,7 @@ export function Projects({ initialCount }) {
   }, [dispatch])
 
   return (
-    <Section id="about" classes="min-vh-100">
+    <Section id="projects" classes="min-vh-100">
       <h1>My Work</h1>
       <Tabs>
         {state.workFilterButtons.map((button) => (
