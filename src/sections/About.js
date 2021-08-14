@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Context } from '../store/AboutStore'
@@ -35,14 +34,18 @@ function AboutTabs(props) {
   const [filterName, setFilterName] = useState('mainSkills')
 
   useEffect(() => {
-    axios
-      .get('./about.json')
-      .then(({ data }) => {
+    const FetchData = async () => {
+      try {
+        const response = await fetch('./about.json')
+        const data = await response.json()
+
         dispatch({ type: 'SET_ABOUT', payload: data })
-      })
-      .catch((error) => {
-        dispatch({ type: 'SET_ERROR', payload: error })
-      })
+      } catch (error) {
+        dispatch({ type: 'SET_ERROR', payload: 'Unable to load /about' })
+      }
+    }
+
+    FetchData()
   }, [dispatch])
 
   let infos = <p>Loading...</p>
@@ -50,7 +53,7 @@ function AboutTabs(props) {
   if (state.error) {
     infos = (
       <p>
-        Something went wrong: <span>{state.error}</span>
+        <strong>{state.error}</strong>
       </p>
     )
   }
@@ -63,12 +66,6 @@ function AboutTabs(props) {
 
   return (
     <React.Fragment>
-      {state.error && (
-        <p>
-          Something went wrong: <span>{state.error}</span>
-        </p>
-      )}
-
       <Tabs>
         {state.aboutButtonFilters.map((button) => (
           <Tab
@@ -100,3 +97,5 @@ function Info({ post }) {
 }
 
 const ProfileImage = ({ children }) => <img src="./profile.png" alt="" className="img-fluid  rounded" />
+
+export { AboutTabs }

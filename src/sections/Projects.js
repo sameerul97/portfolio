@@ -41,13 +41,13 @@ export function Projects({ initialCount }) {
 
       <div className="row">
         {state.selectedInfo.map((project) => (
-          <BootstrapMdColumn key={project.id}>
+          <BootstrapColumn key={project.id}>
             <ProjectCard project={project} />
-          </BootstrapMdColumn>
+          </BootstrapColumn>
         ))}
       </div>
     </Section>
   )
 }
 
-const BootstrapMdColumn = ({ children }) => <div className="col-md-4 my-2">{children}</div>
+const BootstrapColumn = ({ children }) => <div className="col-lg-4 col-sm-6 my-2">{children}</div>

@@ -9,8 +9,7 @@ export default function Tab({ button, filterName, dispatch, setFilterName }) {
         setFilterName(button.filterName)
       }}
       role="tab"
-      id="react-tabs-0"
-      aria-selected="true"
+      aria-selected={filterName === button.filterName}
       aria-disabled="false"
       aria-controls="react-tabs-1"
       tabIndex="0">
