@@ -1,7 +1,6 @@
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import toJson from 'enzyme-to-json'
 
 /* Components */
 import Text, { HeaderText } from '../../components/Text'
@@ -49,7 +48,6 @@ describe('Badge', () => {
     const text = 'hello world'
     const wrapper = shallow(<Text text={text} />)
 
-    expect(toJson(wrapper)).toMatchSnapshot()
     expect(wrapper.find(HeaderText))
     expect(wrapper.find(HeaderText).prop('text')).toBe(text)
   })
@@ -59,7 +57,6 @@ describe('Badge', () => {
     const wrapper = shallow(<Text />)
     const paragraph = wrapper.find('p')
 
-    expect(toJson(wrapper)).toMatchSnapshot()
     expect(paragraph.text()).toEqual(text)
   })
 })
