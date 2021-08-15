@@ -7,12 +7,12 @@
       {
         "id": 1,
         "name": "Front-end",
-        "info": "React JQuery AngularJs Bootstrap ThreeJs, basically i'm a JS dev and ofcourse HTML and CSS too"
+        "info": "JS JQuery AngularJs React Bootstrap ThreeJs"
       },
       {
         "id": 2,
         "name": "Backend-end",
-        "info": "PHP Nodejs Expressjs REST SQL Mysql Postgres MongoDB Redis"
+        "info": "PHP Nodejs Expressjs REST"
       },
       {
         "id": 3,
@@ -28,7 +28,7 @@
     "info": [
       {
         "id": 1,
-        "name": "Bauer Media - Web Developer",
+        "name": "Bauer - Web Developer",
         "info": "2019 - present"
       },
       {
