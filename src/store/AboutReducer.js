@@ -38,9 +38,10 @@ const AboutReducer = (state, action) => {
         error: action.payload,
       }
     }
-    
-    default:
-      return state
+
+    default: {
+      throw new Error(`Unhandled action type: ${action.type}`)
+    }
   }
 }
 
