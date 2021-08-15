@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section should render no text 1`] = `
+<p>
+  No text
+</p>
+`;
+
+exports[`Section should render text 1`] = `
+<HeaderText
+  text="hello world"
+/>
+`;

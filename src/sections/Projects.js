@@ -25,7 +25,7 @@ export function Projects({ initialCount }) {
   }, [dispatch])
 
   return (
-    <Section id="about" classes="min-vh-100">
+    <Section id="projects" classes="min-vh-100">
       <h1>My Work</h1>
       <Tabs>
         {state.workFilterButtons.map((button) => (
@@ -41,13 +41,13 @@ export function Projects({ initialCount }) {
 
       <div className="row">
         {state.selectedInfo.map((project) => (
-          <BootstrapMdColumn key={project.id}>
+          <BootstrapColumn key={project.id}>
             <ProjectCard project={project} />
-          </BootstrapMdColumn>
+          </BootstrapColumn>
         ))}
       </div>
     </Section>
   )
 }
 
-const BootstrapMdColumn = ({ children }) => <div className="col-md-4 my-2">{children}</div>
+const BootstrapColumn = ({ children }) => <div className="col-lg-4 col-sm-6 my-2">{children}</div>

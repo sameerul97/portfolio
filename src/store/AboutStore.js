@@ -15,5 +15,5 @@ const AboutStore = ({ children }) => {
   return <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
 }
 
-export const Context = createContext(initialState)
+export const Context = createContext()
 export default AboutStore
