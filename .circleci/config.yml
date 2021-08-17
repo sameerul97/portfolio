@@ -41,14 +41,16 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Installing dependencies"
+          command: npm install
+
+      - run:
           name: "Building app"
           command: npm run build
 
 workflows:
-  tests:
+  test_and_build:
     jobs:
       - unit_test
       - integration_test
-  build:
-    jobs:
       - build_app
