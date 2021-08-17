@@ -9,19 +9,23 @@ import Tab from '../components/Tab'
 
 import { ProjectCard } from '../components/ProjectCard'
 
-export function Projects({ initialCount }) {
+export function Projects() {
   const [state, dispatch] = useContext(Context)
   const [filterName, setFilterName] = useState('all')
 
   useEffect(() => {
-    axios
-      .get('./work.json')
-      .then(({ data }) => {
+    const FetchData = async () => {
+      try {
+        const response = await fetch('./work.json')
+        const data = await response.json()
+
         dispatch({ type: 'SET_WORK', payload: data })
-      })
-      .catch((error) => {
-        dispatch({ type: 'SET_ERROR', payload: error })
-      })
+      } catch (error) {
+        dispatch({ type: 'SET_ERROR', payload: 'Unable to load work' })
+      }
+    }
+
+    FetchData()
   }, [dispatch])
 
   return (

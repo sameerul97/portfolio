@@ -3,7 +3,7 @@ import { ClickableBadge, Badge } from './Badge'
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="card border-light p-1">
+    <div className="card border-light p-1" data-testid={project.id}>
       <ProjectImage image={project.image} imageCaption={project.name} />
 
       <ProjectBody>
