@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
 
 import { Context } from '../store/WorkStore'
 
