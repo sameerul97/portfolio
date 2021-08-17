@@ -53,4 +53,7 @@ workflows:
     jobs:
       - unit_test
       - integration_test
-      - build_app
+      - build_app:
+          requires:
+            - unit_test
+            - integration_test
