@@ -34,19 +34,21 @@ jobs:
           name: "Running integration test"
           command: npm run citest:coverage:integration
 
-    build:
-      executor: my-executor
-      working_directory: ~/repo
+  build_app:
+    executor: my-executor
+    working_directory: ~/repo
 
-      steps:
-        - checkout
-        - run:
-            name: "Building app"
-            command: npm run build
+    steps:
+      - checkout
+      - run:
+          name: "Building app"
+          command: npm run build
 
 workflows:
   tests:
     jobs:
       - unit_test
       - integration_test
-      - build
+  build:
+    jobs:
+      - build_app
