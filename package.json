@@ -34,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "test:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.js\" --verbose",
-    "test:coverage:unit": "react-scripts test --watchAll=false --env=jsdom  --coverage   --verbose",
+    "test:coverage:unit": "react-scripts test --watchAll=false --env=jsdom  --coverage --testPathPattern=\"spec.js\"  --verbose",
+    "citest:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.js\" ",
+    "citest:coverage:unit": "react-scripts test --env=jsdom  --coverage --testPathPattern=\"spec.js\" ",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
