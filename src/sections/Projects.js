@@ -27,9 +27,20 @@ export function Projects() {
     FetchData()
   }, [dispatch])
 
+  let ProjectError = undefined
+
+  if (state.error) {
+    ProjectError = (
+      <p>
+        <strong>{state.error}</strong>
+      </p>
+    )
+  }
+
   return (
     <Section id="projects" classes="min-vh-100">
       <h1>My Work</h1>
+      {ProjectError}
       <Tabs>
         {state.workFilterButtons.map((button) => (
           <Tab

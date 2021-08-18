@@ -307,8 +307,9 @@ const ProjectData = () => ProjectJSON
 jest.spyOn(window, 'fetch').mockResolvedValue({
   json: ProjectData,
 })
-describe('About Section', () => {
-  it('should render initial state as Main Skills', async () => {
+
+describe('MyWork Section', () => {
+  it('should render initial state as all skills', async () => {
     const { getByText, getByRole, getByTestId } = render(
       <WorkStore>
         <Projects />
@@ -343,6 +344,311 @@ describe('About Section', () => {
       expect(AllSkillsTab).toBeInTheDocument()
       expect(AllSkillsTab).toHaveTextContent('all')
       expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render React project data when React filterbutton selected', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'react'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const ReactProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of ReactProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+
+      const SelectedSkillTab = getByRole('tab', { name: SelectedFilter })
+      const AllSkillsTab = getByRole('tab', { name: 'all' })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(SelectedSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(SelectedSkillTab)
+
+      expect(SelectedSkillTab).toBeInTheDocument()
+      expect(SelectedSkillTab).toHaveTextContent(SelectedFilter)
+      expect(SelectedSkillTab).toHaveClass('tabs__tab--selected')
+
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render Vanilla project data when vanilla filterbutton selected', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'vanilla'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const VanillaProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of VanillaProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+
+      const SelectedSkillTab = getByRole('tab', { name: SelectedFilter })
+      const AllSkillsTab = getByRole('tab', { name: 'all' })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(SelectedSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(SelectedSkillTab)
+
+      expect(SelectedSkillTab).toBeInTheDocument()
+      expect(SelectedSkillTab).toHaveTextContent(SelectedFilter)
+      expect(SelectedSkillTab).toHaveClass('tabs__tab--selected')
+
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render Webgl project data when webgl filterbutton selected', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'webgl'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const WebGLProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of WebGLProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+
+      const SelectedSkillTab = getByRole('tab', { name: SelectedFilter })
+      const AllSkillsTab = getByRole('tab', { name: 'all' })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(SelectedSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(SelectedSkillTab)
+
+      expect(SelectedSkillTab).toBeInTheDocument()
+      expect(SelectedSkillTab).toHaveTextContent(SelectedFilter)
+      expect(SelectedSkillTab).toHaveClass('tabs__tab--selected')
+
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render Database project data when database filterbutton selected', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'database'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const DatabaseProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of DatabaseProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+
+      const SelectedSkillTab = getByRole('tab', { name: SelectedFilter })
+      const AllSkillsTab = getByRole('tab', { name: 'all' })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(SelectedSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(SelectedSkillTab)
+
+      expect(SelectedSkillTab).toBeInTheDocument()
+      expect(SelectedSkillTab).toHaveTextContent(SelectedFilter)
+      expect(SelectedSkillTab).toHaveClass('tabs__tab--selected')
+
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render Node project data when nodejs filterbutton selected', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'node'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const NodeProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of NodeProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+
+      const SelectedSkillTab = getByRole('tab', { name: SelectedFilter })
+      const AllSkillsTab = getByRole('tab', { name: 'all' })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(SelectedSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(SelectedSkillTab)
+
+      expect(SelectedSkillTab).toBeInTheDocument()
+      expect(SelectedSkillTab).toHaveTextContent(SelectedFilter)
+      expect(SelectedSkillTab).toHaveClass('tabs__tab--selected')
+
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+    })
+  })
+
+  it('should render all project data when all filterbutton selected again', async () => {
+    const { getByText, getByRole, getByTestId } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      const SelectedFilter = 'all'
+      const { filterButtons } = ProjectData()
+      const { work } = ProjectData()
+      const AllProjects = work.filter((project) => project.filterName === SelectedFilter)
+
+      const ReactSkillTab = getByRole('tab', { name: 'react' })
+      const AllSkillsTab = getByRole('tab', { name: SelectedFilter })
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(ReactSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(ReactSkillTab)
+
+      expect(ReactSkillTab).toHaveClass('tabs__tab--selected')
+      expect(AllSkillsTab).not.toHaveClass('tabs__tab--selected')
+
+      fireEvent.click(AllSkillsTab)
+
+      expect(AllSkillsTab).toHaveClass('tabs__tab--selected')
+      expect(ReactSkillTab).not.toHaveClass('tabs__tab--selected')
+
+      for (const filter of filterButtons) {
+        expect(getByText(filter.name)).toBeInTheDocument()
+      }
+
+      for (const project of AllProjects) {
+        const ProjectCard = getByTestId(project.id)
+        const { projectTags } = project
+
+        expect(within(ProjectCard).getByText(project.name)).toBeInTheDocument()
+
+        for (const tags of projectTags) {
+          const Badge = within(ProjectCard).getByText(tags.name).closest('a')
+
+          if (tags.link) {
+            expect(Badge).toHaveAttribute('href', tags.link)
+          }
+        }
+      }
+    })
+  })
+
+  it('should show unable to fetch work data', async () => {
+    jest.spyOn(window, 'fetch').mockRejectedValue(new Error('error'))
+
+    const { getByText } = render(
+      <WorkStore>
+        <Projects />
+      </WorkStore>
+    )
+
+    await waitFor(() => {
+      expect(getByText('My Work')).toBeInTheDocument()
+      expect(getByText('Unable to load work')).toBeInTheDocument()
     })
   })
 })
