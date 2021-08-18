@@ -47,8 +47,15 @@ function WorkReducer(state, action) {
         selectedInfo: state.workData.filter((i) => i.filterName === 'node'),
       }
 
+    case 'SET_ERROR': {
+      return {
+        ...state,
+        error: action.payload,
+      }
+    }
+
     default:
-      throw new Error()
+      throw new Error(`Unhandled action type: ${action.type}`)
   }
 }
 export default WorkReducer

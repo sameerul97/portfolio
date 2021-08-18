@@ -7,17 +7,41 @@
       {
         "id": 1,
         "name": "Front-end",
-        "info": "JS JQuery AngularJs React Bootstrap ThreeJs"
+        "tags": [
+          { "id": 1, "name": "Vanilla" },
+          { "id": 2, "name": "React" },
+          { "id": 3, "name": "TypeScript" },
+          { "id": 4, "name": "ThreeJs" },
+          { "id": 5, "name": "Bootstrap" },
+          { "id": 6, "name": "JQuery" },
+          { "id": 7, "name": "AngularJs" }
+        ]
       },
       {
         "id": 2,
         "name": "Backend-end",
-        "info": "PHP Nodejs Expressjs REST"
+        "tags": [
+          { "id": 1, "name": "Nodejs" },
+          { "id": 2, "name": "Expressjs" },
+          { "id": 3, "name": "REST" },
+          { "id": 4, "name": "PHP" },
+          { "id": 5, "name": "SQL" },
+          { "id": 6, "name": "MySql" },
+          { "id": 7, "name": "Postgres" },
+          { "id": 8, "name": "MongoDB" },
+          { "id": 9, "name": "Redis" }
+        ]
       },
       {
         "id": 3,
         "name": "Others",
-        "info": "AWS Docker"
+        "tags": [
+          {
+            "id": 1,
+            "name": "AWS"
+          },
+          { "id": 2, "name": "Docker" }
+        ]
       }
     ]
   },
@@ -28,7 +52,7 @@
     "info": [
       {
         "id": 1,
-        "name": "Bauer - Web Developer",
+        "name": "Bauer Media Group - Web Developer",
         "info": "2019 - present"
       },
       {

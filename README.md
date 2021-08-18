@@ -10,12 +10,12 @@
 const Portfolio = {
   technologies: {
     frontEnd: {
-      js: ['React', 'React three fiber', 'React hooks' ]
+      js: ['React', 'React three fiber', 'React hooks'],
       css: ['bootstrap'],
       3dModel: ['Blender']
     },
     backEnd: 'Just a big JSON file mocking as an API response',
-    ciCd: ['Circle CI', 'CD (WIP)']
+    ciCd: ['Circle CI', 'CD (WIP)'],
     tools:{
         test: ['Jest', 'Enzyme', 'RTL'],
         versionControl: ['Git']
