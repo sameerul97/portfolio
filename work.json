@@ -25,6 +25,10 @@
         {
           "id": 3,
           "name": "Node JS"
+        },
+        {
+          "id": 4,
+          "name": "Express JS"
         }
       ]
     },
@@ -58,6 +62,10 @@
         {
           "id": 6,
           "name": "Docker"
+        },
+        {
+          "id": 7,
+          "name": "Sequelize (ORM)"
         }
       ]
     },
@@ -185,6 +193,22 @@
         {
           "id": 3,
           "name": "React Three Fiber"
+        },
+        {
+          "id": 4,
+          "name": "Jest"
+        },
+        {
+          "id": 5,
+          "name": "Enzyme"
+        },
+        {
+          "id": 6,
+          "name": "React Testing Library (RTL)"
+        },
+        {
+          "id": 7,
+          "name": "Circle CI (Continous Integration)"
         }
       ]
     },
@@ -283,6 +307,68 @@
         {
           "id": 7,
           "name": "REST"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Grazia Virtual 3D Space",
+      "filterName": "webgl",
+      "image": "./3d_gallery.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Live link",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/index4_withperspectivecamera.html"
+        },
+        {
+          "id": 2,
+          "name": "Three JS"
+        },
+        {
+          "id": 3,
+          "name": "Experiment"
+        },
+        {
+          "id": 4,
+          "name": "GSAP"
+        },
+        {
+          "id": 5,
+          "name": "Scrolling"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Camera Scrolling in 3D Space",
+      "filterName": "webgl",
+      "image": "./3d_space.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Live link",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/world/dist/"
+        },
+        {
+          "id": 2,
+          "name": "SketchFab"
+        },
+        {
+          "id": 3,
+          "name": "ThreeJS"
+        },
+        {
+          "id": 4,
+          "name": "GSAP"
+        },
+        {
+          "id": 5,
+          "name": "Scrolling"
+        },
+        {
+          "id": 6,
+          "name": "Experiment"
         }
       ]
     }
