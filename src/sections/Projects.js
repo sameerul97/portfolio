@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/WorkStore'
 
 import Section from '../components/Section'
-import Tabs from '../components/Tabs'
+import Tabs from '../components/Tabs.tsx'
 import Tab from '../components/Tab'
 
 import { ProjectCard } from '../components/ProjectCard'

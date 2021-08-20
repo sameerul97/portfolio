@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Context } from '../store/AboutStore'
-import Tabs from '../components/Tabs'
+import Tabs from '../components/Tabs.tsx'
 import Tab from '../components/Tab'
 import Section from '../components/Section'
 import { Badge } from '../components/Badge'
