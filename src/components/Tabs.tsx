@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
-interface DOMAttributes {
-  children?: ReactNode
-}
-export default function ({ children }: DOMAttributes) {
+import { TabsChildren } from '../interfaces'
+
+export default function ({ children }: TabsChildren) {
   return (
     <ul className="tabs" role="tablist">
       {children}
