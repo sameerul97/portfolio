@@ -48,7 +48,7 @@ interface Tabprops {
 
 
 
-export {
+export type {
     TabsChildren, Tabprops, SectionProps, ClickableBadgeprops,
     BadgeProps, Tag, ProjectCardProps
 }

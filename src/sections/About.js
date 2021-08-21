@@ -7,7 +7,7 @@ import Tab from '../components/Tab.tsx'
 import Section from '../components/Section.tsx'
 import { Badge } from '../components/Badge.tsx'
 
-export function About(props) {
+export function About() {
   return (
     <Section id="about">
       <div className="row">
@@ -29,7 +29,7 @@ export function About(props) {
   )
 }
 
-function AboutTabs(props) {
+function AboutTabs() {
   const [state, dispatch] = useContext(Context)
   const [filterName, setFilterName] = useState('mainSkills')
 
