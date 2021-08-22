@@ -2,11 +2,11 @@ import React, { useContext, useState, useEffect } from 'react'
 
 import { Context } from '../store/WorkStore'
 
-import Section from '../components/Section'
-import Tabs from '../components/Tabs'
-import Tab from '../components/Tab'
+import Section from '../components/Section.tsx'
+import Tabs from '../components/Tabs.tsx'
+import Tab from '../components/Tab.tsx'
 
-import { ProjectCard } from '../components/ProjectCard'
+import { ProjectCard } from '../components/ProjectCard.tsx'
 
 export function Projects() {
   const [state, dispatch] = useContext(Context)

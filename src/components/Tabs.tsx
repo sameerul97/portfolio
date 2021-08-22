@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function ({ children }) {
+import { TabsChildren } from '../interfaces'
+
+export default function ({ children }: TabsChildren) {
   return (
     <ul className="tabs" role="tablist">
       {children}

@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { Context } from '../store/AboutStore'
+import { Context } from '../store/about'
+import { Tag } from '../store/about/state'
+
 import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
 import Section from '../components/Section'
 import { Badge } from '../components/Badge'
+import { ActionType } from '../store/about/action-types'
 
-export function About(props) {
+export function About() {
   return (
     <Section id="about">
       <div className="row">
@@ -29,8 +32,8 @@ export function About(props) {
   )
 }
 
-function AboutTabs(props) {
-  const [state, dispatch] = useContext(Context)
+function AboutTabs() {
+  const { state, dispatch } = useContext(Context)
   const [filterName, setFilterName] = useState('mainSkills')
 
   useEffect(() => {
@@ -39,9 +42,9 @@ function AboutTabs(props) {
         const response = await fetch('./about.json')
         const data = await response.json()
 
-        dispatch({ type: 'SET_ABOUT', payload: data })
+        dispatch({ type: ActionType.SET_ABOUT, payload: data })
       } catch (error) {
-        dispatch({ type: 'SET_ERROR', payload: 'Unable to load about' })
+        dispatch({ type: ActionType.SET_ERROR, payload: 'Unable to load about' })
       }
     }
 
@@ -59,7 +62,7 @@ function AboutTabs(props) {
   }
 
   if (!state.error && state.selectedInfo) {
-    infos = state.selectedInfo.map((post) => {
+    infos = state.selectedInfo.map((post: any) => {
       return <Info key={post.id} post={post} />
     })
   }
@@ -83,7 +86,7 @@ function AboutTabs(props) {
   )
 }
 
-function Info({ post }) {
+function Info({ post }: { post: { name: string; info?: string; tags?: Array<Tag> } }) {
   return (
     <div className="my-2 mb-3 tabs-detail">
       <h6 className="mb-1">{post.name}</h6>
@@ -96,6 +99,6 @@ function Info({ post }) {
   )
 }
 
-const ProfileImage = ({ children }) => <img src="./profile.png" alt="sameer_image" className="img-fluid  rounded" />
+const ProfileImage = () => <img src="./profile.png" alt="sameer_image" className="img-fluid  rounded" />
 
 export { AboutTabs }
