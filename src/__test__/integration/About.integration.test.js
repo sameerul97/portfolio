@@ -6,8 +6,8 @@ import '@testing-library/jest-dom/extend-expect'
 import profile from '../../../public/profile.png'
 /* Components */
 
-import { About } from '../../sections/About'
-import AboutStore from '../../store/AboutStore'
+import { About } from '../../sections/About.tsx'
+import AboutStore from '../../store/about'
 Enzyme.configure({ adapter: new Adapter() })
 
 const AboutData = () => [
@@ -31,7 +31,7 @@ const AboutData = () => [
       },
       {
         id: 2,
-        name: 'Backend-end',
+        name: 'Back-end',
         tags: [
           { id: 1, name: 'Nodejs' },
           { id: 2, name: 'Expressjs' },
@@ -101,7 +101,7 @@ describe('About Section', () => {
 
     await waitFor(() => {
       expect(getByText('Front-end')).toBeInTheDocument()
-      expect(getByText('Backend-end')).toBeInTheDocument()
+      expect(getByText('Back-end')).toBeInTheDocument()
       expect(getByText('Others')).toBeInTheDocument()
 
       const { info: MainSkillsData } = AboutData()[0]
@@ -209,7 +209,7 @@ describe('About Section', () => {
       expect(EducationTab).not.toHaveClass('tabs__tab--selected')
 
       expect(getByText('Front-end')).toBeInTheDocument()
-      expect(getByText('Backend-end')).toBeInTheDocument()
+      expect(getByText('Back-end')).toBeInTheDocument()
       expect(getByText('Others')).toBeInTheDocument()
 
       const { info: MainSkillsData } = AboutData()[0]

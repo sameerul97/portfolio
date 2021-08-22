@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
+import { Action } from "../store/about/actions"
 
 interface Tag {
     link?: string;
     id: string;
     name: string;
 }
-
 
 interface ClickableBadgeprops {
     tag: Tag
@@ -39,14 +39,9 @@ interface Tabprops {
         name: string;
     }
     filterName: string;
-    dispatch: ({ type }: {
-        type: string
-    }) => void;
+    dispatch: (action: Action) => void;
     setFilterName: (text: string) => void;
 }
-
-
-
 
 export type {
     TabsChildren, Tabprops, SectionProps, ClickableBadgeprops,
