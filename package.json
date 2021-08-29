@@ -2,6 +2,7 @@
   "name": "sameer-web-developer-portfolio",
   "version": "0.1.0",
   "private": true,
+  "main": "src/index.tsx",
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.0",

@@ -1,12 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, ReactNode } from 'react'
 
 import { Context } from '../store/work'
 
-import Section from '../components/Section.tsx'
-import Tabs from '../components/Tabs.tsx'
-import Tab from '../components/Tab.tsx'
+import Section from '../components/Section'
+import Tabs from '../components/Tabs'
+import Tab from '../components/Tab'
 
-import { ProjectCard } from '../components/ProjectCard.tsx'
+import { ProjectCard } from '../components/ProjectCard'
+import { ActionType } from '../store/work/action-types'
 
 export function Projects() {
   const { state, dispatch } = useContext(Context)
@@ -18,9 +19,9 @@ export function Projects() {
         const response = await fetch('./work.json')
         const data = await response.json()
 
-        dispatch({ type: 'SET_WORK', payload: data })
+        dispatch({ type: ActionType.SET_WORK, payload: data })
       } catch (error) {
-        dispatch({ type: 'SET_ERROR', payload: { message: 'Unable to load work' } })
+        dispatch({ type: ActionType.SET_ERROR, payload: { message: 'Unable to load work' } })
       }
     }
 
@@ -64,4 +65,6 @@ export function Projects() {
   )
 }
 
-const BootstrapColumn = ({ children }) => <div className="col-lg-4 col-sm-6 my-2">{children}</div>
+const BootstrapColumn = ({ children }: { children: ReactNode }) => (
+  <div className="col-lg-4 col-sm-6 my-2">{children}</div>
+)
