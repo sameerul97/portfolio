@@ -7,7 +7,7 @@ import profile from '../../../public/profile.png'
 /* Components */
 
 import { Projects } from '../../sections/Projects'
-import WorkStore from '../../store/WorkStore'
+import WorkStore from '../../store/work'
 
 Enzyme.configure({ adapter: new Adapter() })
 

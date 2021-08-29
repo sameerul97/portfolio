@@ -29,8 +29,7 @@ interface AboutButtonFilters {
 }
 
 interface InitialStateType {
-  aboutData: Array<any>;
-  // aboutData: Array<About>;
+  aboutData: AboutList;
   selectedInfo: InfoList;
   aboutButtonFilters: Array<AboutButtonFilters>;
   error: null | string;

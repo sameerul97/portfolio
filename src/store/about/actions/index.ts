@@ -1,8 +1,8 @@
 import { ActionType } from "../action-types"
-
+import { About } from "../state"
 interface SetAbout {
     type: ActionType.SET_ABOUT;
-    payload: any;
+    payload: About[];
 }
 
 interface SetError {

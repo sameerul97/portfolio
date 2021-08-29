@@ -4,7 +4,8 @@ import { Header } from './sections/Header'
 import { About } from './sections/About.tsx'
 
 import AboutStore from './store/about/'
-import WorkStore from './store/WorkStore'
+import WorkStore from './store/work/'
+// import WorkStore from './store/WorkStore'
 
 import { Projects } from './sections/Projects'
 
