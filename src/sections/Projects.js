@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { Context } from '../store/WorkStore'
+import { Context } from '../store/work'
 
 import Section from '../components/Section.tsx'
 import Tabs from '../components/Tabs.tsx'
@@ -9,7 +9,7 @@ import Tab from '../components/Tab.tsx'
 import { ProjectCard } from '../components/ProjectCard.tsx'
 
 export function Projects() {
-  const [state, dispatch] = useContext(Context)
+  const { state, dispatch } = useContext(Context)
   const [filterName, setFilterName] = useState('all')
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Projects() {
 
         dispatch({ type: 'SET_WORK', payload: data })
       } catch (error) {
-        dispatch({ type: 'SET_ERROR', payload: 'Unable to load work' })
+        dispatch({ type: 'SET_ERROR', payload: { message: 'Unable to load work' } })
       }
     }
 

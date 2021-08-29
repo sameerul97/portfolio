@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Context } from '../store/about'
-import { Tag } from '../store/about/state'
+import { Info as IInfo } from '../store/about/state'
 
 import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
@@ -51,7 +51,7 @@ function AboutTabs() {
     FetchData()
   }, [dispatch])
 
-  let infos = <p>Loading...</p>
+  let infos: React.ReactNode = <p>Loading...</p>
 
   if (state.error) {
     infos = (
@@ -62,7 +62,7 @@ function AboutTabs() {
   }
 
   if (!state.error && state.selectedInfo) {
-    infos = state.selectedInfo.map((post: any) => {
+    infos = state.selectedInfo.map((post: IInfo) => {
       return <Info key={post.id} post={post} />
     })
   }
@@ -86,7 +86,7 @@ function AboutTabs() {
   )
 }
 
-function Info({ post }: { post: { name: string; info?: string; tags?: Array<Tag> } }) {
+function Info({ post }: { post: IInfo }) {
   return (
     <div className="my-2 mb-3 tabs-detail">
       <h6 className="mb-1">{post.name}</h6>

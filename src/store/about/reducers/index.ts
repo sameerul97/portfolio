@@ -19,21 +19,21 @@ const AboutReducer = (state: InitialStateType, action: Action): InitialStateType
         case ActionType.mainSkills: {
             return {
                 ...state,
-                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type).info,
+                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type)!.info,
             }
         }
 
         case ActionType.education: {
             return {
                 ...state,
-                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type).info,
+                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type)!.info,
             }
         }
 
         case ActionType.experience: {
             return {
                 ...state,
-                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type).info,
+                selectedInfo: state.aboutData.find((a: About) => a.filterName === action.type)!.info,
             }
         }
 

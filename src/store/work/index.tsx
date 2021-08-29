@@ -1,28 +1,26 @@
 import React, { createContext, useReducer, Dispatch } from 'react'
 import type { ReactNode } from 'react'
-import AboutReducer from './reducers'
+import WorkReducer from './reducers'
 import type { InitialStateType } from './state'
-import { Action } from './actions'
+import { Actions } from './actions'
 
 const initialState: InitialStateType = {
-  // aboutData holds original source
-  aboutData: [],
-  // selectedInfo holds array of object for selected filter
+  workData: [],
   selectedInfo: [],
-  aboutButtonFilters: [],
+  workFilterButtons: [],
   error: null,
 }
 
 const Context = createContext<{
   state: InitialStateType
-  dispatch: Dispatch<Action>
+  dispatch: Dispatch<Actions>
 }>({
   state: initialState,
   dispatch: () => null,
 })
 
 const AboutStore = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(AboutReducer, initialState)
+  const [state, dispatch] = useReducer(WorkReducer, initialState)
 
   return <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>
 }
