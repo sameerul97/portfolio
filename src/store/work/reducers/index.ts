@@ -1,6 +1,6 @@
 import { ActionType } from "../action-types/index"
 import { Actions } from "../actions"
-import type { InitialStateType, Work, WorkButtonFilters } from '../state'
+import type { InitialStateType, WorkButtonFilters } from '../state'
 
 function WorkReducer(state: InitialStateType, action: Actions) {
     switch (action.type) {
