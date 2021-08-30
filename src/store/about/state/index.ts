@@ -36,6 +36,7 @@ interface InitialStateType {
 }
 
 export type {
+  AboutList,
   InitialStateType,
   Tag,
   Info,
