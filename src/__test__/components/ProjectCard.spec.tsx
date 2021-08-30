@@ -90,40 +90,40 @@ describe('Project Card', () => {
 
   it('should render Project Card', () => {
     const Project = {
-      id: 3,
+      id: "3",
       name: 'Talent Platform',
       filterName: 'database',
       image: './talent_platform.png',
       projectTags: [
         {
-          id: 1,
+          id: "1",
           name: 'Github',
           link: 'https://github.com/sameerul97/Talent_Platform',
         },
         {
-          id: 2,
+          id: "2",
           name: 'ES6',
         },
         {
-          id: 3,
+          id: "3",
           name: 'Webpack',
         },
         {
-          id: 4,
+          id: "4",
           name: 'Design Prototype',
           link: 'https://xd.adobe.com/view/323f507d-8dac-4e8d-a21a-79457a6a679f-676c/',
         },
         {
-          id: 5,
+          id: "5",
           name: 'Database',
           link: 'https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/talent_platform_schema.png',
         },
         {
-          id: 6,
+          id: "6",
           name: 'PHP',
         },
         {
-          id: 7,
+          id: "7",
           name: 'REST',
         },
       ],

@@ -12,7 +12,7 @@ type ActionMap<M extends { [index: string]: any }> = {
     }
 };
 
-type ProductPayload = {
+type WorkPayload = {
 
     [ActionType.SET_WORK]: {
         work: Work[];
@@ -42,5 +42,5 @@ type ProductPayload = {
     }
 }
 
-export type Actions = ActionMap<ProductPayload>[keyof ActionMap<ProductPayload>];
+export type Actions = ActionMap<WorkPayload>[keyof ActionMap<WorkPayload>];
 
