@@ -39,7 +39,7 @@ interface Tabprops {
         name: string;
     }
     filterName: string;
-    dispatch: (action: Action) => void;
+    dispatch: (action: any) => void;
     setFilterName: (text: string) => void;
 }
 

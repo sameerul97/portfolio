@@ -2,8 +2,8 @@
   "name": "sameer-web-developer-portfolio",
   "version": "0.1.0",
   "private": true,
+  "main": "src/index.tsx",
   "dependencies": {
-    "@types/jest": "^27.0.1",
     "@types/node": "^16.7.0",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
@@ -23,6 +23,11 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
@@ -31,18 +36,16 @@
     "jest-environment-jsdom-sixteen": "^2.0.0",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "raw-loader": "^4.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0"
+    "raw-loader": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.js\" --verbose",
-    "test:coverage:unit": "react-scripts test --watchAll=false --env=jsdom  --coverage --testPathPattern=\"spec.js\"  --verbose",
-    "citest:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.js\" ",
-    "citest:coverage:unit": "react-scripts test --env=jsdom  --coverage --testPathPattern=\"spec.js\" ",
+    "test:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.tsx\" --verbose",
+    "test:coverage:unit": "react-scripts test --watchAll=false --env=jsdom  --coverage --testPathPattern=\"spec.tsx\"  --verbose",
+    "citest:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.tsx\" ",
+    "citest:coverage:unit": "react-scripts test --env=jsdom  --coverage --testPathPattern=\"spec.tsx\" ",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

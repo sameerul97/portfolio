@@ -304,9 +304,13 @@ const ProjectJSON = {
 
 const ProjectData = () => ProjectJSON
 
-jest.spyOn(window, 'fetch').mockResolvedValue({
-  json: ProjectData,
+const mockSuccessResponse = ProjectData()
+const mockJsonPromise = Promise.resolve(mockSuccessResponse)
+const mockFetchPromise = Promise.resolve({
+  json: () => mockJsonPromise,
 })
+var globalRef: any = global
+globalRef.fetch = jest.fn().mockImplementation(() => mockFetchPromise)
 
 describe('MyWork Section', () => {
   it('should render initial state as all skills', async () => {

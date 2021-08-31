@@ -13,6 +13,7 @@ describe('Badge', () => {
     const tag = {
       link: 'https://github.com',
       name: 'Github',
+      id: '1',
     }
 
     const wrapper = shallow(<ClickableBadge tag={tag} />)
@@ -26,6 +27,7 @@ describe('Badge', () => {
   it('should render badge', () => {
     const tag = {
       name: 'Docker',
+      id: '1',
     }
 
     const wrapper = shallow(<Badge tag={tag} />)
@@ -37,6 +39,7 @@ describe('Badge', () => {
   it('should render badge with custom CSS class', () => {
     const tag = {
       name: 'Docker',
+      id: '1',
     }
     const classes = 'bg-white text-dark customClass'
     const wrapper = shallow(<Badge tag={tag} classes={classes} />)

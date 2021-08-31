@@ -6,8 +6,10 @@ import '@testing-library/jest-dom/extend-expect'
 import profile from '../../../public/profile.png'
 /* Components */
 
-import { About } from '../../sections/About.tsx'
+import { About } from '../../sections/About'
 import AboutStore from '../../store/about'
+import { AboutList, Tag } from '../../store/about/state'
+
 Enzyme.configure({ adapter: new Adapter() })
 
 const AboutData = () => [
@@ -17,42 +19,42 @@ const AboutData = () => [
     name: 'main skills',
     info: [
       {
-        id: 1,
+        id: '1',
         name: 'Front-end',
         tags: [
-          { id: 1, name: 'Vanilla' },
-          { id: 2, name: 'React' },
-          { id: 3, name: 'TypeScript' },
-          { id: 4, name: 'ThreeJs' },
-          { id: 5, name: 'Bootstrap' },
-          { id: 6, name: 'JQuery' },
-          { id: 7, name: 'AngularJs' },
+          { id: '1', name: 'Vanilla' },
+          { id: '2', name: 'React' },
+          { id: '3', name: 'TypeScript' },
+          { id: '4', name: 'ThreeJs' },
+          { id: '5', name: 'Bootstrap' },
+          { id: '6', name: 'JQuery' },
+          { id: '7', name: 'AngularJs' },
         ],
       },
       {
-        id: 2,
+        id: '2',
         name: 'Back-end',
         tags: [
-          { id: 1, name: 'Nodejs' },
-          { id: 2, name: 'Expressjs' },
-          { id: 3, name: 'REST' },
-          { id: 4, name: 'PHP' },
-          { id: 5, name: 'SQL' },
-          { id: 6, name: 'MySql' },
-          { id: 7, name: 'Postgres' },
-          { id: 8, name: 'MongoDB' },
-          { id: 9, name: 'Redis' },
+          { id: '1', name: 'Nodejs' },
+          { id: '2', name: 'Expressjs' },
+          { id: '3', name: 'REST' },
+          { id: '4', name: 'PHP' },
+          { id: '5', name: 'SQL' },
+          { id: '6', name: 'MySql' },
+          { id: '7', name: 'Postgres' },
+          { id: '8', name: 'MongoDB' },
+          { id: '9', name: 'Redis' },
         ],
       },
       {
-        id: 3,
+        id: '3',
         name: 'Others',
         tags: [
           {
-            id: 1,
+            id: '1',
             name: 'AWS',
           },
-          { id: 2, name: 'Docker' },
+          { id: '2', name: 'Docker' },
         ],
       },
     ],
@@ -88,9 +90,14 @@ const AboutData = () => [
   },
 ]
 
-jest.spyOn(window, 'fetch').mockResolvedValue({
-  json: AboutData,
+const mockSuccessResponse = AboutData()
+const mockJsonPromise = Promise.resolve(mockSuccessResponse)
+const mockFetchPromise = Promise.resolve({
+  json: () => mockJsonPromise,
 })
+var globalRef: any = global
+globalRef.fetch = jest.fn().mockImplementation(() => mockFetchPromise)
+
 describe('About Section', () => {
   it('should render initial state as Main Skills', async () => {
     const { getByText, getByRole } = render(
@@ -106,8 +113,11 @@ describe('About Section', () => {
 
       const { info: MainSkillsData } = AboutData()[0]
 
-      for (const { tags: SkillTags } of MainSkillsData) {
-        SkillTags.forEach((skill) => expect(getByText(skill.name)).toBeInTheDocument())
+      for (const data of MainSkillsData) {
+        if ('tags' in data) {
+          const SkillTags = data.tags
+          SkillTags.forEach((skill: any) => expect(getByText(skill.name)).toBeInTheDocument())
+        }
       }
 
       const MainSkillsTab = getByRole('tab', { selected: true, name: 'main skills' })
@@ -214,8 +224,11 @@ describe('About Section', () => {
 
       const { info: MainSkillsData } = AboutData()[0]
 
-      for (const { tags: SkillTags } of MainSkillsData) {
-        SkillTags.forEach((skill) => expect(getByText(skill.name)).toBeInTheDocument())
+      for (const data of MainSkillsData) {
+        if ('tags' in data) {
+          const SkillTags: Array<Tag> = data.tags
+          SkillTags.forEach((skill: any) => expect(getByText(skill.name)).toBeInTheDocument())
+        }
       }
     })
   })

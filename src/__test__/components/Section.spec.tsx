@@ -45,7 +45,7 @@ describe('Section', () => {
 
   it('should render section with custom CSS class', () => {
     const classes = 'bg-white text-dark customClass'
-    const wrapper = shallow(<Section classes={classes}>{SectionChildren}</Section>)
+    const wrapper = shallow(<Section id="About" classes={classes}>{SectionChildren}</Section>)
 
     expect(wrapper.find(Board)).toHaveLength(1)
     expect(wrapper.find(Board).props().children).toEqual(SectionChildren)
@@ -69,7 +69,7 @@ describe('Section', () => {
   })
 
   it('should render section with default CSS class and id when parameter is not passed', () => {
-    const wrapper = shallow(<Section>{SectionChildren}</Section>)
+    const wrapper = shallow(<Section id="">{SectionChildren}</Section>)
 
     expect(wrapper.props().id).toBe('')
     expect(wrapper.find(Board)).toHaveLength(1)

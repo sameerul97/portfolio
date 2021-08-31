@@ -29,6 +29,7 @@ interface InitialStateType {
 }
 
 export type {
+  WorkList,
   InitialStateType,
   Tag,
   Work,
