@@ -2,10 +2,12 @@ import { useEffect, useState, useRef } from 'react'
 
 const useSetMinHeight = () => {
   const [height, setHeight] = useState(window.innerWidth)
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleWindowSizeChange = () => {
-    setHeight(ref.current.clientHeight)
+    if (ref.current) {
+      setHeight(ref.current.clientHeight)
+    }
   }
 
   useEffect(() => {
