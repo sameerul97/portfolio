@@ -93,7 +93,7 @@ function Info({ post }: { post: IInfo }) {
       {post.info && <p className="my-0 py-0 fw-light">{post.info}</p>}
 
       {post.tags?.map((tag, i) => (
-        <Badge key={i} tag={tag} classes={'bg-white text-dark fw-normal text-uppercase hoverable-badge'} />
+        <Badge key={i} tag={tag} classes={'bg-white text-dark font-weight-normal text-uppercase hoverable-badge'} />
       ))}
     </div>
   )

@@ -54,7 +54,7 @@ export function Projects() {
         ))}
       </Tabs>
 
-      <div className="row">
+      <div className="card-columns">
         {state.selectedInfo.map((project) => (
           <BootstrapColumn key={project.id}>
             <ProjectCard project={project} />
@@ -65,6 +65,4 @@ export function Projects() {
   )
 }
 
-const BootstrapColumn = ({ children }: { children: ReactNode }) => (
-  <div className="col-lg-4 col-sm-6 my-2">{children}</div>
-)
+const BootstrapColumn = ({ children }: { children: ReactNode }) => <div className="card my-2">{children}</div>

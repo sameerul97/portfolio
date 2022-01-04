@@ -10,210 +10,35 @@
   "work": [
     {
       "id": 1,
-      "name": "Asana automation (AWS)",
-      "filterName": "node",
-      "image": "./node-serverless.png",
+      "name": "John Lewis 3D Hotspot Article",
+      "filterName": "webgl",
+      "image": "./john_lewis_3d_article.png",
       "projectTags": [
         {
           "id": 1,
-          "name": "Serverless"
+          "name": "Live link",
+          "link": "https://creative.bauermedia.co.uk/iframe-test/index/"
         },
         {
           "id": 2,
-          "name": "Asynchronous"
+          "name": "React"
         },
         {
           "id": 3,
-          "name": "Node JS"
+          "name": "React Three Fiber"
         },
         {
           "id": 4,
-          "name": "Express JS"
+          "name": "React Spring"
+        },
+        {
+          "id": 5,
+          "name": "Zustand"
         }
       ]
     },
     {
       "id": 2,
-      "name": "Pictionary (Web based)",
-      "filterName": "node",
-      "image": "./socket-node-redis-docker.jpeg",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Github",
-          "link": "https://github.com/sameerul97/guessthewordapp/tree/dev"
-        },
-        {
-          "id": 2,
-          "name": "Nodejs"
-        },
-        {
-          "id": 3,
-          "name": "Socket.Io"
-        },
-        {
-          "id": 4,
-          "name": "Redis"
-        },
-        {
-          "id": 5,
-          "name": "Postgres"
-        },
-        {
-          "id": 6,
-          "name": "Docker"
-        },
-        {
-          "id": 7,
-          "name": "Sequelize (ORM)"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Talent Platform",
-      "filterName": "database",
-      "image": "./talent_platform.png",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Github",
-          "link": "https://github.com/sameerul97/Talent_Platform"
-        },
-        {
-          "id": 2,
-          "name": "ES6"
-        },
-        {
-          "id": 3,
-          "name": "Webpack"
-        },
-        {
-          "id": 4,
-          "name": "Design Prototype",
-          "link": "https://xd.adobe.com/view/323f507d-8dac-4e8d-a21a-79457a6a679f-676c/"
-        },
-        {
-          "id": 5,
-          "name": "Database",
-          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/talent_platform_schema.png"
-        },
-        {
-          "id": 6,
-          "name": "PHP"
-        },
-        {
-          "id": 7,
-          "name": "REST"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Apple IPhone scrolling",
-      "filterName": "webgl",
-      "image": "./scrolling-iphone.png",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Live link",
-          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/"
-        },
-        {
-          "id": 2,
-          "name": "Three JS"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Grazia & Pandora WEBGL",
-      "filterName": "webgl",
-      "image": "./pandora-reflection.png",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Live link",
-          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/reflection2/"
-        },
-        {
-          "id": 2,
-          "name": "React"
-        },
-        {
-          "id": 3,
-          "name": "React Three Fiber"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Wheres Your Head At",
-      "filterName": "vanilla",
-      "image": "./wyha.png",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Live link",
-          "link": "https://www.wheresyourheadat.org/pledgekindness/"
-        },
-        {
-          "id": 2,
-          "name": "PHP"
-        },
-        {
-          "id": 3,
-          "name": "Interactive Map"
-        },
-        {
-          "id": 4,
-          "name": "Vanilla"
-        },
-        {
-          "id": 5,
-          "name": "Jquery"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Portfolio",
-      "filterName": "react",
-      "image": "./sameer-portfolio.JPG",
-      "projectTags": [
-        {
-          "id": 1,
-          "name": "Github",
-          "link": "https://github.com/sameerul97/portfolio"
-        },
-        {
-          "id": 2,
-          "name": "React"
-        },
-        {
-          "id": 3,
-          "name": "React Three Fiber"
-        },
-        {
-          "id": 4,
-          "name": "Jest"
-        },
-        {
-          "id": 5,
-          "name": "Enzyme"
-        },
-        {
-          "id": 6,
-          "name": "React Testing Library (RTL)"
-        },
-        {
-          "id": 7,
-          "name": "Circle CI (Continous Integration)"
-        }
-      ]
-    },
-    {
-      "id": 8,
       "name": "Image Annotator",
       "filterName": "react",
       "image": "./img-annotator.png",
@@ -251,7 +76,213 @@
       ]
     },
     {
+      "id": 3,
+      "name": "Asana automation (AWS)",
+      "filterName": "node",
+      "image": "./node-serverless.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Serverless"
+        },
+        {
+          "id": 2,
+          "name": "Asynchronous"
+        },
+        {
+          "id": 3,
+          "name": "Node JS"
+        },
+        {
+          "id": 4,
+          "name": "Express JS"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pictionary (Web based)",
+      "filterName": "node",
+      "image": "./socket-node-redis-docker.jpeg",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Github",
+          "link": "https://github.com/sameerul97/guessthewordapp/tree/dev"
+        },
+        {
+          "id": 2,
+          "name": "Nodejs"
+        },
+        {
+          "id": 3,
+          "name": "Socket.Io"
+        },
+        {
+          "id": 4,
+          "name": "Redis"
+        },
+        {
+          "id": 5,
+          "name": "Postgres"
+        },
+        {
+          "id": 6,
+          "name": "Docker"
+        },
+        {
+          "id": 7,
+          "name": "Sequelize (ORM)"
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "name": "Talent Platform",
+      "filterName": "database",
+      "image": "./talent_platform.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Github",
+          "link": "https://github.com/sameerul97/Talent_Platform"
+        },
+        {
+          "id": 2,
+          "name": "ES6"
+        },
+        {
+          "id": 3,
+          "name": "Webpack"
+        },
+        {
+          "id": 4,
+          "name": "Prototype",
+          "link": "https://xd.adobe.com/view/323f507d-8dac-4e8d-a21a-79457a6a679f-676c/"
+        },
+        {
+          "id": 5,
+          "name": "Database",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/talent_platform_schema.png"
+        },
+        {
+          "id": 6,
+          "name": "PHP"
+        },
+        {
+          "id": 7,
+          "name": "REST"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Apple IPhone scrolling",
+      "filterName": "webgl",
+      "image": "./scrolling-iphone.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Live link",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/"
+        },
+        {
+          "id": 2,
+          "name": "Three JS"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Grazia & Pandora WEBGL",
+      "filterName": "webgl",
+      "image": "./pandora-reflection.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Live link",
+          "link": "https://creative.bauermedia.co.uk/scrollmagic/3d_experiment/reflection2/"
+        },
+        {
+          "id": 2,
+          "name": "React"
+        },
+        {
+          "id": 3,
+          "name": "React Three Fiber"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Wheres Your Head At",
+      "filterName": "vanilla",
+      "image": "./wyha.png",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Live link",
+          "link": "https://www.wheresyourheadat.org/pledgekindness/"
+        },
+        {
+          "id": 2,
+          "name": "PHP"
+        },
+        {
+          "id": 3,
+          "name": "Interactive Map"
+        },
+        {
+          "id": 4,
+          "name": "Vanilla"
+        },
+        {
+          "id": 5,
+          "name": "Jquery"
+        }
+      ]
+    },
+    {
       "id": 9,
+      "name": "Portfolio",
+      "filterName": "react",
+      "image": "./sameer-portfolio.JPG",
+      "projectTags": [
+        {
+          "id": 1,
+          "name": "Github",
+          "link": "https://github.com/sameerul97/portfolio"
+        },
+        {
+          "id": 2,
+          "name": "React"
+        },
+        {
+          "id": 3,
+          "name": "React Three Fiber"
+        },
+        {
+          "id": 4,
+          "name": "Jest"
+        },
+        {
+          "id": 5,
+          "name": "Enzyme"
+        },
+        {
+          "id": 6,
+          "name": "React Testing Library (RTL)"
+        },
+        {
+          "id": 7,
+          "name": "Circle CI (Continous Integration)"
+        }
+      ]
+    },
+
+    {
+      "id": 10,
       "name": "Adventure Creative Pages",
       "filterName": "vanilla",
       "image": "./creative-page.png",
@@ -272,7 +303,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Talent Platform",
       "filterName": "vanilla",
       "image": "./talent_platform.png",
@@ -292,7 +323,7 @@
         },
         {
           "id": 4,
-          "name": "Design Prototype",
+          "name": "Prototype",
           "link": "https://xd.adobe.com/view/323f507d-8dac-4e8d-a21a-79457a6a679f-676c/"
         },
         {
@@ -311,7 +342,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "Grazia Virtual 3D Space",
       "filterName": "webgl",
       "image": "./3d_gallery.png",
@@ -340,7 +371,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "name": "Camera Scrolling in 3D Space",
       "filterName": "webgl",
       "image": "./3d_space.png",
