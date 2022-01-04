@@ -19,7 +19,7 @@
       },
       {
         "id": 2,
-        "name": "Backend-end",
+        "name": "Back-end",
         "tags": [
           { "id": 1, "name": "Nodejs" },
           { "id": 2, "name": "Expressjs" },
