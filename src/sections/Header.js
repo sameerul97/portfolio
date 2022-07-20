@@ -1,10 +1,11 @@
 import * as THREE from 'three'
-import React, { Suspense, useRef, useState, useEffect } from 'react'
-import { Canvas, useFrame, useResource, useThree, useLoader } from 'react-three-fiber'
-import { Html, Octahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial, Stats } from 'drei'
 
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import React, { Suspense, useRef, useState, useEffect } from 'react'
+import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber'
+import { Html, useGLTF, Octahedron, useTexture, useCubeTexture, MeshDistortMaterial, Stats } from '@react-three/drei'
+
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import { Effects } from '../components/Effects'
 import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
@@ -62,8 +63,9 @@ function Instances({ material }) {
 }
 
 const Sameer = () => {
-  const gltf = useLoader(GLTFLoader, './sameer_2.glb')
-
+  // const gltf = useLoader(GLTFLoader, './sameer_2.glb')
+  const gltf = useGLTF('./sameer_2.glb')
+  console.log(gltf)
   return <primitive object={gltf.scene} position={[0, -0.75, 0]} />
 }
 
@@ -75,15 +77,15 @@ const CameraController = () => {
   useEffect(() => {
     let controls
 
-    if (!isMobileScreen) {
-      controls = new OrbitControls(camera, gl.domElement)
-      controls.enableZoom = false
-    }
+    // if (!isMobileScreen) {
+    //   controls = new OrbitControls(camera, gl.domElement)
+    //   controls.enableZoom = false
+    // }
 
     return () => {
-      if (!isMobileScreen) {
-        controls.dispose()
-      }
+      // if (!isMobileScreen) {
+      //   controls.dispose()
+      // }
     }
   }, [camera, gl, isMobileScreen])
 
@@ -98,9 +100,9 @@ const CameraController = () => {
 }
 
 function SceneProps() {
-  const bumpMap = useTextureLoader('./bump.jpg')
-  const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: './cube/' })
-  const [matRef, material] = useResource()
+  const bumpMap = useTexture('./bump.jpg')
+  const envMap = useCubeTexture(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: './cube/' })
+  const [matRef, material] = useState()
 
   return (
     <>
@@ -123,12 +125,16 @@ function SceneProps() {
 }
 
 export function Header() {
+  console.log('HELLO')
+
   return (
     <Canvas
       colorManagement={false}
       gl={{ alpha: false }}
+      mode="concurrent"
       camera={{ position: [0, 0, 100], fov: 18 }}
       onCreated={({ gl, scene }) => {
+        console.log('HELLO')
         gl.toneMapping = THREE.ACESFilmicToneMapping
         gl.outputEncoding = THREE.sRGBEncoding
       }}>
