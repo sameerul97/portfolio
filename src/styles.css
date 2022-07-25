@@ -10,6 +10,7 @@ html, body, #root {
   background-color: #272727;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 #webgl {
@@ -153,3 +154,5 @@ ul.tabs li:before {
     margin-right: 15px;
   }
 }
+
+

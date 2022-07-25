@@ -10,6 +10,7 @@ import { Html, useGLTF, Octahedron, useTexture, useCubeTexture, MeshDistortMater
 import { Effects } from '../components/Effects'
 import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
 // import { Effects } from './_Effect';
+import { SceneContainer } from '../components/SceneContainer'
 
 function Hero({ material }) {
   const main = useRef()
@@ -129,16 +130,18 @@ export function Header() {
 
   return (
     <Canvas
-      colorManagement={false}
-      gl={{ alpha: false }}
-      mode="concurrent"
-      camera={{ position: [0, 0, 100], fov: 18 }}
-      onCreated={({ gl, scene }) => {
-        console.log('HELLO')
-        gl.toneMapping = THREE.ACESFilmicToneMapping
-        gl.outputEncoding = THREE.sRGBEncoding
-      }}>
-      <color attach="background" args={['#050505']} />
+
+    // colorManagement={false}
+    // gl={{ alpha: false }}
+    // mode="concurrent"
+    // camera={{ position: [0, 0, 100], fov: 18 }}
+    // onCreated={({ gl, scene }) => {
+    //   console.log('HELLO')
+    //   gl.toneMapping = THREE.ACESFilmicToneMapping
+    //   gl.outputEncoding = THREE.sRGBEncoding
+    // }}
+    >
+      {/* <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
 
       <Stats showPanel={0} className="stats" />
@@ -150,7 +153,8 @@ export function Header() {
         <Sameer />
       </Suspense>
 
-      <Effects />
+      <Effects /> */}
+      <SceneContainer />
     </Canvas>
   )
 }
