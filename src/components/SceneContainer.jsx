@@ -47,7 +47,7 @@ export function SceneContainer() {
         fov={50}
         position={[-1.75, 10.85, 20.35]}
       /> */}
-      <OrbitControls target={[0, 5, 5]} maxPolarAngle={Math.PI * 0.6} />
+      <OrbitControls enablePan={false} enableZoom={false} target={[0, 5, 5]} maxPolarAngle={Math.PI * 0.6} />
       <Stats />
       <Float speed={0.5} rotationIntensity={0.6} floatIntensity={0.6}>
         <primitive object={mesh} />

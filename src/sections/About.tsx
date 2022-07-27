@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Context } from '../store/about'
 import { Info as IInfo } from '../store/about/state'
@@ -56,12 +55,12 @@ function AboutTabs() {
   if (state.error) {
     infos = (
       <p>
-        <strong>{state.error}</strong>
+        <strong>Error {state.error}</strong>
       </p>
     )
   }
 
-  if (!state.error && state.selectedInfo) {
+  if (!state.error && state.selectedInfo.length > 0) {
     infos = state.selectedInfo.map((post: IInfo) => {
       return <Info key={post.id} post={post} />
     })

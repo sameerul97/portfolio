@@ -3,7 +3,6 @@ import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { render, within, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import profile from '../../../public/profile.png'
 /* Components */
 
 import { Projects } from '../../sections/Projects'

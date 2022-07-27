@@ -3,7 +3,6 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import profile from '../../../public/profile.png'
 /* Components */
 
 import { About } from '../../sections/About'
@@ -95,10 +94,54 @@ const mockJsonPromise = Promise.resolve(mockSuccessResponse)
 const mockFetchPromise = Promise.resolve({
   json: () => mockJsonPromise,
 })
+
+const mockDelayedFetch = Promise.resolve({
+  json: () => new Promise((resolve) => setTimeout(() => resolve(mockJsonPromise), 1000)),
+})
+
 var globalRef: any = global
 globalRef.fetch = jest.fn().mockImplementation(() => mockFetchPromise)
 
 describe('About Section', () => {
+  it('should show Loading...', async () => {
+    const { getByText, getByAltText } = render(
+      <AboutStore>
+        <About />
+      </AboutStore>
+    )
+
+    var globalRef: any = global
+    globalRef.fetch = jest.fn().mockImplementation(() => mockDelayedFetch)
+
+    expect(getByText('Loading...')).toBeInTheDocument()
+
+    globalRef.fetch = jest.fn().mockImplementation(() => mockFetchPromise)
+
+    await waitFor(() => {
+      expect(getByText('Front-end')).toBeInTheDocument()
+      expect(getByText('About Me')).toBeInTheDocument()
+      expect(getByAltText('sameer_image')).toBeDefined()
+    })
+  })
+
+  it('should contain about me heading and image', async () => {
+    const { getByText, getByAltText } = render(
+      <AboutStore>
+        <About />
+      </AboutStore>
+    )
+
+    expect(getByText('Loading...')).toBeInTheDocument()
+
+    await waitFor(() => {
+      expect(fetch).toHaveBeenCalledTimes(1)
+
+      expect(getByText('About Me')).toBeInTheDocument()
+      expect(getByAltText('sameer_image')).toBeDefined()
+      expect(getByText('Front-end')).toBeInTheDocument()
+    })
+  })
+
   it('should render initial state as Main Skills', async () => {
     const { getByText, getByRole } = render(
       <AboutStore>
@@ -186,20 +229,6 @@ describe('About Section', () => {
     })
   })
 
-  it('should contain About me heading and image', async () => {
-    const { getByText, getByAltText } = render(
-      <AboutStore>
-        <About />
-      </AboutStore>
-    )
-
-    await waitFor(() => {
-      expect(getByText('About Me')).toBeInTheDocument()
-      expect(getByAltText('sameer_image')).toBeDefined()
-      expect(getByAltText('sameer_image')).toHaveAttribute('src', `./${profile}`)
-    })
-  })
-
   it('should render mainSkills data when clicked', async () => {
     const { getByText, getByRole } = render(
       <AboutStore>
@@ -244,7 +273,7 @@ describe('About Section', () => {
 
     await waitFor(() => {
       expect(getByText('About Me')).toBeInTheDocument()
-      expect(getByText('Unable to load about')).toBeInTheDocument()
+      expect(getByText('Error Unable to load about')).toBeInTheDocument()
     })
   })
 })
