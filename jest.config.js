@@ -28,4 +28,7 @@ export default {
   },
   transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
   testEnvironment: 'jsdom',
+  // testEnvironmentOptions: {
+  //   url: 'http://localhost/',
+  // },
 }
