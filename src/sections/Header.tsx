@@ -12,20 +12,20 @@ import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
 // import { Effects } from './_Effect';
 import { SceneContainer } from '../components/SceneContainer'
 
-function Hero({ material }) {
-  const main = useRef()
+function Hero({ material }: any) {
+  const main = useRef<any>()
 
   useFrame(({ clock, mouse }) => {
-    main.current.rotation.z = clock.getElapsedTime()
-    main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.1)
-    main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.1)
+    main.current!.rotation.z = clock.getElapsedTime()
+    main.current!.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.1)
+    main.current!.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.1)
   })
 
-  return <Octahedron args={[1, 5]} ref={main} material={material} position={[0, 0, -2]} detail={0} />
+  return <Octahedron args={[1, 5]} ref={main} material={material} position={[0, 0, -2]} />
 }
 
-function Instances({ material }) {
-  const [sphereRefs] = useState(() => [])
+function Instances({ material }: any) {
+  const [sphereRefs] = useState<any[]>(() => [])
   const initialPositions = [
     [-4, 2, -2],
     [-5, 12, -2],
@@ -126,21 +126,13 @@ function SceneProps() {
 }
 
 export function Header() {
-  console.log('HELLO')
-
   return (
     <Canvas
-
-    // colorManagement={false}
-    // gl={{ alpha: false }}
-    // mode="concurrent"
-    // camera={{ position: [0, 0, 100], fov: 18 }}
-    // onCreated={({ gl, scene }) => {
-    //   console.log('HELLO')
-    //   gl.toneMapping = THREE.ACESFilmicToneMapping
-    //   gl.outputEncoding = THREE.sRGBEncoding
-    // }}
-    >
+      gl={{ alpha: false }}
+      onCreated={({ gl, scene }) => {
+        gl.toneMapping = THREE.ACESFilmicToneMapping
+        gl.outputEncoding = THREE.sRGBEncoding
+      }}>
       {/* <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
 

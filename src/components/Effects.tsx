@@ -36,7 +36,6 @@ export function Effects() {
       {/* <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} /> */}
       <Bloom
         intensity={2.0} // The bloom intensity.
-        blurPass={undefined} // A blur pass.
         width={1645} // render width
         height={9000} // render height
         kernelSize={5} // blur kernel size
