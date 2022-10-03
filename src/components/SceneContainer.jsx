@@ -1,4 +1,4 @@
-import { OrbitControls, Sky, PerspectiveCamera, Environment, Float, Stats } from '@react-three/drei'
+import {  Sky, PerspectiveCamera, Environment, Float, Stats } from '@react-three/drei'
 import {
   EffectComposer,
   HueSaturation,
@@ -47,7 +47,6 @@ export function SceneContainer() {
         fov={50}
         position={[-1.75, 10.85, 20.35]}
       /> */}
-      <OrbitControls enablePan={false} enableZoom={false} target={[0, 5, 5]} maxPolarAngle={Math.PI * 0.6} />
       <Stats />
       <Float speed={0.5} rotationIntensity={0.6} floatIntensity={0.6}>
         <primitive object={mesh} />
@@ -116,8 +115,6 @@ function Ocean() {
   const waterNormals = useLoader(THREE.TextureLoader, '/waternormals.jpeg')
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping
 
-  const [vec] = useState(() => new THREE.Vector3())
-
   const geom = useMemo(() => new THREE.PlaneGeometry(10000, 10000), [])
   const config = useMemo(
     () => ({
@@ -134,13 +131,7 @@ function Ocean() {
     [waterNormals]
   )
   useFrame((state, delta) => (ref.current.material.uniforms.time.value += delta))
-
-  useFrame((state) => {
-    // if (!isMobileScreen) {
-    state.camera.position.lerp(vec.set(-state.mouse.x * 10, 8 + state.mouse.y * 6, 15), 0.02)
-    // state.camera.lookAt(0, 0, 1)
-    // }
-  })
+ 
   return <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} />
 }
 

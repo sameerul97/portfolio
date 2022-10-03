@@ -11,6 +11,7 @@ import { Effects } from '../components/Effects'
 import useCheckMobileScreen from '../hooks/useCheckMobileScreen'
 // import { Effects } from './_Effect';
 import { SceneContainer } from '../components/SceneContainer'
+import { Rig } from '../components/Rig'
 
 function Hero({ material }: any) {
   const main = useRef<any>()
@@ -125,7 +126,12 @@ function SceneProps() {
   )
 }
 
+let timer: ReturnType<typeof setTimeout> | null = null
+let rate = 15
+
 export function Header() {
+  const [zoom, setZoom] = useState(false)
+
   return (
     <Canvas
       gl={{ alpha: false }}
@@ -133,7 +139,15 @@ export function Header() {
         gl.toneMapping = THREE.ACESFilmicToneMapping
         gl.outputEncoding = THREE.sRGBEncoding
       }}
-      camera={{ position: [8, 12, 25] }}>
+      camera={{ position: [8, 12, 25] }}
+      onClick={(e) => {
+        if (timer) {
+          clearTimeout(timer)
+          setZoom(false)
+          rate = 15
+        }
+      }}
+      onPointerDown={(e) => (timer = setTimeout(() => setZoom(true), 500))}>
       {/* <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
 
@@ -148,6 +162,7 @@ export function Header() {
 
       <Effects /> */}
       <SceneContainer />
+      <Rig zoom={zoom} rate={rate} />
     </Canvas>
   )
 }
