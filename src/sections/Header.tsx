@@ -132,7 +132,8 @@ export function Header() {
       onCreated={({ gl, scene }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping
         gl.outputEncoding = THREE.sRGBEncoding
-      }}>
+      }}
+      camera={{ position: [8, 12, 25] }}>
       {/* <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
 

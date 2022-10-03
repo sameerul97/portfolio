@@ -13,9 +13,9 @@ export function SceneParticles() {
       <object3D position={[0, 5, 10]}>
         <Sparkles count={50} scale={[4, 4, 4]} color={"purple"} size={6} speed={0.2} noise={0.2}/>
       </object3D>
-
+{/* 
       <object3D position={[0, 4, 15]}>
         <Sparkles count={50} scale={[5, 5, 5]} color={"#ffe6a8"} size={6} speed={0.2} noise={0.2}/>
-      </object3D>
+      </object3D> */}
   </>
 }
