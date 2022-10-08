@@ -11,7 +11,7 @@ export const SceneParticles = React.memo((props) => {
       </object3D>
 
       <object3D position={[0, 6, 0]}>
-        <Sparkles count={50} scale={[12, 2, 12]} color={'#ffe6a8'} size={10} speed={0.2} noise={0.2} />
+        <Sparkles count={80} scale={[12, 2, 12]} color={'#ffe6a8'} size={2} speed={1} noise={0.2} />
       </object3D>
 
       <object3D position={[0, 5, 10]}>

@@ -140,6 +140,7 @@ export function Header() {
         gl.outputEncoding = THREE.sRGBEncoding
       }}
       camera={{ position: [8, 12, 25] }}
+      // camera={{ position: [8, 24, 15] }}
       onClick={(e) => {
         if (timer) {
           clearTimeout(timer)
@@ -161,7 +162,7 @@ export function Header() {
       </Suspense>
 
       <Effects /> */}
-      <SceneContainer />
+      <SceneContainer  zoom={zoom}/>
       <Rig zoom={zoom} rate={rate} />
     </Canvas>
   )

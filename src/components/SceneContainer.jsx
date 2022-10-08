@@ -1,4 +1,4 @@
-import {  Sky, PerspectiveCamera, Environment, Float, Stats } from '@react-three/drei'
+import { Sky, PerspectiveCamera, Environment, Float, Stats } from '@react-three/drei'
 import {
   EffectComposer,
   HueSaturation,
@@ -36,7 +36,7 @@ mesh.rotation.x = Math.PI * 0.5
 mesh.position.set(1.17, 10.5, -30.1)
 mesh.scale.set(2.5, 2, 2)
 
-export function SceneContainer() {
+export function SceneContainer({zoom}) {
   return (
     <Suspense fallback={null}>
       <Environment background={'only'} files={'/textures/bg.hdr'} />
@@ -72,7 +72,7 @@ export function SceneContainer() {
       /> */}
       {/* <FloatingRocks /> */}
       <Sameer />
-      <Ocean />
+      <Ocean zoom={zoom} />
       <EffectComposer stencilBuffer={true}>
         <DepthOfField focusDistance={0.012} focalLength={0.045} bokehScale={7} />
         {/* <HueSaturation hue={0} saturation={-0.15} />
@@ -109,7 +109,7 @@ export function SceneContainer() {
   )
 }
 
-function Ocean() {
+function Ocean({ zoom }) {
   const ref = useRef()
   const gl = useThree((state) => state.gl)
   const waterNormals = useLoader(THREE.TextureLoader, '/waternormals.jpeg')
@@ -130,8 +130,11 @@ function Ocean() {
     }),
     [waterNormals]
   )
-  useFrame((state, delta) => (ref.current.material.uniforms.time.value += delta))
- 
+  // useFrame((state, delta) => {
+  //   ref.current.material.uniforms.time.value += delta
+  // })
+  useFrame((state, delta) => (ref.current.material.uniforms.time.value += Math.cos(delta) / (zoom ? 150 : 45)))
+
   return <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} />
 }
 

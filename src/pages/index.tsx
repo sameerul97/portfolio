@@ -69,35 +69,35 @@ export default function Web(props: any) {
 export async function getStaticProps() {
   const { method, headers } = graphqlApi
 
-  const [aboutmeSection, aboutMeTopiAndContent, projectCategories, projects] = await Promise.all([
-    post(graphqlApi.endpoint, {
-      method,
-      headers,
-      body: graphqlApi.aboutmeSectionQuery,
-    }),
-    post(graphqlApi.endpoint, {
-      method,
-      headers,
-      body: graphqlApi.aboutMeTopiAndContent,
-    }),
-    post(graphqlApi.endpoint, {
-      method,
-      headers,
-      body: graphqlApi.projectCategoriesQuery,
-    }),
-    post(graphqlApi.endpoint, {
-      method,
-      headers,
-      body: graphqlApi.projectQuery,
-    }),
-  ])
+  // const [aboutmeSection, aboutMeTopiAndContent, projectCategories, projects] = await Promise.all([
+  //   post(graphqlApi.endpoint, {
+  //     method,
+  //     headers,
+  //     body: graphqlApi.aboutmeSectionQuery,
+  //   }),
+  //   post(graphqlApi.endpoint, {
+  //     method,
+  //     headers,
+  //     body: graphqlApi.aboutMeTopiAndContent,
+  //   }),
+  //   post(graphqlApi.endpoint, {
+  //     method,
+  //     headers,
+  //     body: graphqlApi.projectCategoriesQuery,
+  //   }),
+  //   post(graphqlApi.endpoint, {
+  //     method,
+  //     headers,
+  //     body: graphqlApi.projectQuery,
+  //   }),
+  // ])
 
   return {
     props: {
-      aboutmeSection,
-      aboutMeTopiAndContent,
-      projectCategories,
-      projects,
+      // aboutmeSection,
+      // aboutMeTopiAndContent,
+      // projectCategories,
+      // projects,
     },
   }
 }
