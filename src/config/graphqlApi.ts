@@ -1,5 +1,6 @@
 export const graphqlApi = {
-  endpoint: 'https://portfolio-headless-cms-production.up.railway.app/graphql',
+  endpoint: 'http://localhost:1337/graphql',
+  //    'https://portfolio-headless-cms-production.up.railway.app/graphql',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
