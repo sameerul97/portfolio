@@ -1,14 +1,11 @@
 import React from 'react'
-import Document, { Head, Html,Main,NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-  render() { 
-    const { locale } = this.props
-
+  render() {
     return (
-      <Html lang={locale}>
+      <Html>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
           <meta name="description" content="Sameer Web Developer portfolio" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -17,8 +14,6 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
-          <meta name="msapplication-TileColor" content="#da532c" />
-          <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
           <Main />

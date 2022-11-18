@@ -156,7 +156,20 @@ ul.tabs li:before {
 }
 
 #social img{
-  width: 50px;
+  width: 70px;
+  z-index: 1;
+}
+
+.social-button a>div{
+  z-index: 0;
+  position: absolute;
+  background: #5effff;
+  height: 100%;
+  width: 73%;
+  top: 100%;
+  left: 12%;
+  overflow: hidden;
+  transition: top .5s ease 0s;
 }
 
 .canvas {

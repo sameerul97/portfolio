@@ -62,7 +62,7 @@ export default function Github({ x, y }: { x: number; y: number }) {
       position: [getRandomArbitrary(-2, 2), getRandomArbitrary(2.5, 4), 2],
       scale: getRandomArbitrary(90, 120),
       rotation: [Math.PI / 2, 0, 3],
-      opacity: 0,
+      opacity: 0.3,
     },
     from: {
       position: [getRandomArbitrary(0, 0.5), getRandomArbitrary(-4, -2), 0],
@@ -75,8 +75,10 @@ export default function Github({ x, y }: { x: number; y: number }) {
 
   return (
     <animated.mesh
+      // @ts-ignore
       position={position}
       scale={scale}
+      // @ts-ignore
       rotation={rotation}
       ref={ref}
       // rotation={[Math.PI / 2, 0, 0]}
@@ -85,15 +87,24 @@ export default function Github({ x, y }: { x: number; y: number }) {
       geometry={nodes.Curve.geometry}>
       {/* <boxBufferGeometry attach="geometry" args={[1, 1, 1]} /> */}
       {/* <animated.meshStandardMaterial color="white" opacity={opacity} /> */}
+      {/* @ts-ignore */}
       <animated.meshPhysicalMaterial
-        color={'white'}
+        color={'#5effff'}
+        // @ts-ignore
         shininess={1}
         metalness={1}
         transmission={1}
         thickness={3}
         roughness={0.4}
       />
-      {/* <animated.meshPhongMaterial color={'black'} shininess={1} metalness={1} roughness={1} /> */}
+      {/* <animated.meshPhongMaterial
+        color={'white'}
+        shininess={1}
+        metalness={1}
+        roughness={0.1}
+        transparent={true}
+        // opacity={opacity}
+      /> */}
     </animated.mesh>
   )
 }

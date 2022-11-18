@@ -22,30 +22,28 @@ export default function Web(props: any) {
   }, [])
 
   return (
-    <div>
-      <React.Fragment>
-        <div id="webgl" style={{ height: '100vh', width: '100vw' }}>
-          {/* <Header /> */}
-          {show && (
-            <div
-              className="position-absolute"
-              style={{ top: '70%', left: '50%', zIndex: '1', transform: 'translate(-50%,-70%)' }}>
-              <h2>Click and Hold</h2>
-            </div>
-          )}
-        </div>
+    <React.Fragment>
+      <div id="webgl" style={{ height: '100vh', width: '100vw' }}>
+        {/* <Header /> */}
+        {show && (
+          <div
+            className="position-absolute"
+            style={{ top: '70%', left: '50%', zIndex: '1', transform: 'translate(-50%,-70%)' }}>
+            <h2>Click and Hold</h2>
+          </div>
+        )}
+      </div>
 
-        <AboutStore>
-          <About />
-        </AboutStore>
+      <AboutStore>
+        <About />
+      </AboutStore>
 
-        <WorkStore>
-          <Projects />
-        </WorkStore>
+      <WorkStore>
+        <Projects />
+      </WorkStore>
 
-        <Social />
-      </React.Fragment>
-    </div>
+      <Social />
+    </React.Fragment>
   )
 }
 
