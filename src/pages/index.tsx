@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { InferGetStaticPropsType } from 'next'
 
 import { Header } from '../sections/Header'
 import { Projects } from '../sections/Projects'
@@ -10,7 +11,9 @@ import WorkStore from '../store/work'
 import { post } from '../helper/fetch'
 import { graphqlApi } from 'src/config'
 
-export default function Web(props: any) {
+import { Query } from '../types/index'
+
+export default function Web(props: InferGetStaticPropsType<typeof getStaticProps>) {
   console.log(props)
 
   const [show, setShow] = useState(true)
@@ -47,46 +50,37 @@ export default function Web(props: any) {
   )
 }
 
-// export async function getStaticProps() {
-//   const { method, headers } = graphqlApi
-//   const result = await post('http://localhost:1337/graphql', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       query: `
-//       query {
-//         categories {
-//           data {
-//             id
-//             attributes {
-//               name
-//             }
-//           }
-//         }
-//       }
-
-//         `,
-//       variables: {
-//         now: new Date().toISOString(),
-//       },
-//     }),
-//   })
-//   // const res = await result.json()
-//   // .then((result) => console.log(result))
-//   // .then((result) => result)
-//   return {
-//     props: {
-//       result,
-//     },
-//   }
-// }
-
 export async function getStaticProps() {
   const { method, headers } = graphqlApi
 
-  const [aboutmeSection, aboutMeTopiAndContent, projectCategories, projects] = await Promise.all([
+  const [
+    {
+      data: {
+        aboutmeSection: { data: aboutmeSection },
+      },
+    },
+    {
+      data: {
+        topicV2S: { data: aboutMeTopiAndContent },
+      },
+    },
+
+    {
+      data: {
+        categories: { data: projectCategories },
+      },
+    },
+    {
+      data: {
+        projects: { data: projects },
+      },
+    },
+  ]: [
+    { data: { aboutmeSection: { data: Query['aboutmeSection'] } } },
+    { data: { topicV2S: { data: Query['topicV2S'] } } },
+    { data: { categories: { data: Query['categories'] } } },
+    { data: { projects: { data: Query['projects'] } } }
+  ] = await Promise.all([
     post(graphqlApi.endpoint, {
       method,
       headers,
